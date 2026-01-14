@@ -471,6 +471,18 @@
             z-index: 1;
         }
 
+        .slide:not(.active) .slide-content {
+            opacity: 0;
+            animation: none;
+        }
+
+        .slide:not(.active) .slide-content h2,
+        .slide:not(.active) .slide-content p,
+        .slide:not(.active) .slide-content a {
+            opacity: 0;
+            animation: none;
+        }
+
         .slide img {
             width: 100%;
             height: 100%;
