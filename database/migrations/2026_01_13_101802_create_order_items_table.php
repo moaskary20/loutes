@@ -11,6 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // Drop table if exists (in case it was created without foreign key)
+        Schema::dropIfExists('order_items');
+        
         Schema::create('order_items', function (Blueprint $table) {
             $table->id();
             $table->foreignId('order_id')->constrained()->onDelete('cascade');
