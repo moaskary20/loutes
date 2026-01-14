@@ -13,8 +13,10 @@ class CheckAdminRole
     {
         $user = auth()->user();
 
+        // هذا middleware يعمل فقط بعد Authenticate middleware
+        // لذا المستخدم يجب أن يكون مسجل دخول بالفعل
         if (!$user) {
-            abort(403, 'ليس لديك صلاحية للوصول إلى لوحة التحكم');
+            return redirect()->route('filament.admin.auth.login');
         }
 
         // إذا كان role غير محدد (null)، افترض أنه admin (للمستخدمين القدامى)
