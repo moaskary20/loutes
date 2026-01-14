@@ -480,11 +480,14 @@
 
         .slide-content {
             position: absolute;
+            top: 250px;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 2;
             text-align: center;
             color: white;
             padding: 2rem;
-            background: rgba(0, 0, 0, 0.3);
+            background: transparent;
             border-radius: 10px;
             max-width: 600px;
         }
