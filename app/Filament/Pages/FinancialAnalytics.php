@@ -8,6 +8,7 @@ use App\Models\OrderItem;
 use App\Models\Product;
 use Filament\Pages\Page;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class FinancialAnalytics extends Page
 {
@@ -75,12 +76,19 @@ class FinancialAnalytics extends Page
 
         $totalRevenue = $orders->sum('total');
         
-        $totalCost = OrderItem::whereHas('order', function ($query) {
-            $query->where('status', OrderStatus::DELIVERED)
-                  ->whereBetween('created_at', [$this->startDate . ' 00:00:00', $this->endDate . ' 23:59:59']);
-        })
-        ->join('products', 'order_items.product_id', '=', 'products.id')
-        ->sum(DB::raw('order_items.quantity * COALESCE(products.cost_price, 0)'));
+        $totalCost = 0;
+        if (Schema::hasTable('order_items')) {
+            try {
+                $totalCost = OrderItem::whereHas('order', function ($query) {
+                    $query->where('status', OrderStatus::DELIVERED)
+                          ->whereBetween('created_at', [$this->startDate . ' 00:00:00', $this->endDate . ' 23:59:59']);
+                })
+                ->join('products', 'order_items.product_id', '=', 'products.id')
+                ->sum(DB::raw('order_items.quantity * COALESCE(products.cost_price, 0)'));
+            } catch (\Exception $e) {
+                $totalCost = 0;
+            }
+        }
 
         $profit = $totalRevenue - $totalCost;
         $profitMargin = $totalRevenue > 0 ? ($profit / $totalRevenue) * 100 : 0;
@@ -95,20 +103,28 @@ class FinancialAnalytics extends Page
 
     public function getTopProductsByProfit(): array
     {
-        $products = OrderItem::whereHas('order', function ($query) {
-            $query->where('status', OrderStatus::DELIVERED)
-                  ->whereBetween('created_at', [$this->startDate . ' 00:00:00', $this->endDate . ' 23:59:59']);
-        })
-        ->join('products', 'order_items.product_id', '=', 'products.id')
-        ->select('order_items.product_id', 'order_items.product_name')
-        ->selectRaw('SUM(order_items.quantity) as total_quantity')
-        ->selectRaw('SUM(order_items.total) as total_revenue')
-        ->selectRaw('SUM(order_items.quantity * COALESCE(products.cost_price, 0)) as total_cost')
-        ->selectRaw('SUM(order_items.total) - SUM(order_items.quantity * COALESCE(products.cost_price, 0)) as profit')
-        ->groupBy('order_items.product_id', 'order_items.product_name')
-        ->orderByDesc('profit')
-        ->limit(10)
-        ->get();
+        if (!Schema::hasTable('order_items')) {
+            return [];
+        }
+        
+        try {
+            $products = OrderItem::whereHas('order', function ($query) {
+                $query->where('status', OrderStatus::DELIVERED)
+                      ->whereBetween('created_at', [$this->startDate . ' 00:00:00', $this->endDate . ' 23:59:59']);
+            })
+            ->join('products', 'order_items.product_id', '=', 'products.id')
+            ->select('order_items.product_id', 'order_items.product_name')
+            ->selectRaw('SUM(order_items.quantity) as total_quantity')
+            ->selectRaw('SUM(order_items.total) as total_revenue')
+            ->selectRaw('SUM(order_items.quantity * COALESCE(products.cost_price, 0)) as total_cost')
+            ->selectRaw('SUM(order_items.total) - SUM(order_items.quantity * COALESCE(products.cost_price, 0)) as profit')
+            ->groupBy('order_items.product_id', 'order_items.product_name')
+            ->orderByDesc('profit')
+            ->limit(10)
+            ->get();
+        } catch (\Exception $e) {
+            return [];
+        }
 
         return $products->map(function ($product) {
             $profitMargin = $product->total_revenue > 0 

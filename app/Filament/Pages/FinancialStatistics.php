@@ -8,6 +8,7 @@ use App\Models\OrderItem;
 use App\Models\Product;
 use Filament\Pages\Page;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class FinancialStatistics extends Page
 {
@@ -38,12 +39,19 @@ class FinancialStatistics extends Page
 
         $totalRevenue = $orders->sum('total');
         
-        $totalCost = OrderItem::whereHas('order', function ($query) {
-            $query->where('status', OrderStatus::DELIVERED)
-                  ->where('created_at', '>=', now()->subMonth());
-        })
-        ->join('products', 'order_items.product_id', '=', 'products.id')
-        ->sum(DB::raw('order_items.quantity * COALESCE(products.cost_price, 0)'));
+        $totalCost = 0;
+        if (Schema::hasTable('order_items')) {
+            try {
+                $totalCost = OrderItem::whereHas('order', function ($query) {
+                    $query->where('status', OrderStatus::DELIVERED)
+                          ->where('created_at', '>=', now()->subMonth());
+                })
+                ->join('products', 'order_items.product_id', '=', 'products.id')
+                ->sum(DB::raw('order_items.quantity * COALESCE(products.cost_price, 0)'));
+            } catch (\Exception $e) {
+                $totalCost = 0;
+            }
+        }
 
         return $totalRevenue > 0 ? (($totalRevenue - $totalCost) / $totalRevenue) * 100 : 0;
     }
@@ -63,12 +71,19 @@ class FinancialStatistics extends Page
 
     public function getInventoryTurnover(): float
     {
-        $totalCost = OrderItem::whereHas('order', function ($query) {
-            $query->where('status', OrderStatus::DELIVERED)
-                  ->where('created_at', '>=', now()->subYear());
-        })
-        ->join('products', 'order_items.product_id', '=', 'products.id')
-        ->sum(DB::raw('order_items.quantity * COALESCE(products.cost_price, 0)'));
+        $totalCost = 0;
+        if (Schema::hasTable('order_items')) {
+            try {
+                $totalCost = OrderItem::whereHas('order', function ($query) {
+                    $query->where('status', OrderStatus::DELIVERED)
+                          ->where('created_at', '>=', now()->subYear());
+                })
+                ->join('products', 'order_items.product_id', '=', 'products.id')
+                ->sum(DB::raw('order_items.quantity * COALESCE(products.cost_price, 0)'));
+            } catch (\Exception $e) {
+                $totalCost = 0;
+            }
+        }
 
         $averageInventory = Product::avg(DB::raw('stock_quantity * COALESCE(cost_price, 0)')) ?? 1;
 
@@ -89,12 +104,19 @@ class FinancialStatistics extends Page
             ->where('created_at', '>=', now()->subYear())
             ->sum('total');
 
-        $cost = OrderItem::whereHas('order', function ($query) {
-            $query->where('status', OrderStatus::DELIVERED)
-                  ->where('created_at', '>=', now()->subYear());
-        })
-        ->join('products', 'order_items.product_id', '=', 'products.id')
-        ->sum(DB::raw('order_items.quantity * COALESCE(products.cost_price, 0)'));
+        $cost = 0;
+        if (Schema::hasTable('order_items')) {
+            try {
+                $cost = OrderItem::whereHas('order', function ($query) {
+                    $query->where('status', OrderStatus::DELIVERED)
+                          ->where('created_at', '>=', now()->subYear());
+                })
+                ->join('products', 'order_items.product_id', '=', 'products.id')
+                ->sum(DB::raw('order_items.quantity * COALESCE(products.cost_price, 0)'));
+            } catch (\Exception $e) {
+                $cost = 0;
+            }
+        }
 
         return $revenue - $cost;
     }

@@ -8,6 +8,7 @@ use App\Models\OrderItem;
 use App\Models\Product;
 use Filament\Pages\Page;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class FinancialReports extends Page
 {
@@ -41,10 +42,17 @@ class FinancialReports extends Page
 
         $totalRevenue = $orders->sum('total');
         $totalOrders = $orders->count();
-        $totalItems = OrderItem::whereHas('order', function ($query) {
-            $query->where('status', OrderStatus::DELIVERED)
-                  ->whereBetween('created_at', [$this->startDate, $this->endDate . ' 23:59:59']);
-        })->sum('quantity');
+        $totalItems = 0;
+        if (Schema::hasTable('order_items')) {
+            try {
+                $totalItems = OrderItem::whereHas('order', function ($query) {
+                    $query->where('status', OrderStatus::DELIVERED)
+                          ->whereBetween('created_at', [$this->startDate, $this->endDate . ' 23:59:59']);
+                })->sum('quantity');
+            } catch (\Exception $e) {
+                $totalItems = 0;
+            }
+        }
         
         $avgOrderValue = $totalOrders > 0 ? $totalRevenue / $totalOrders : 0;
         $totalTax = $orders->sum('tax_amount');
@@ -64,37 +72,53 @@ class FinancialReports extends Page
 
     public function getProductReportData(): array
     {
-        $products = OrderItem::whereHas('order', function ($query) {
-            $query->where('status', OrderStatus::DELIVERED)
-                  ->whereBetween('created_at', [$this->startDate, $this->endDate . ' 23:59:59']);
-        })
-        ->select('product_id', 'product_name')
-        ->selectRaw('SUM(quantity) as total_quantity')
-        ->selectRaw('SUM(total) as total_revenue')
-        ->groupBy('product_id', 'product_name')
-        ->orderByDesc('total_revenue')
-        ->limit(10)
-        ->get();
+        if (!Schema::hasTable('order_items')) {
+            return [];
+        }
+        
+        try {
+            $products = OrderItem::whereHas('order', function ($query) {
+                $query->where('status', OrderStatus::DELIVERED)
+                      ->whereBetween('created_at', [$this->startDate, $this->endDate . ' 23:59:59']);
+            })
+            ->select('product_id', 'product_name')
+            ->selectRaw('SUM(quantity) as total_quantity')
+            ->selectRaw('SUM(total) as total_revenue')
+            ->groupBy('product_id', 'product_name')
+            ->orderByDesc('total_revenue')
+            ->limit(10)
+            ->get();
 
-        return $products->toArray();
+            return $products->toArray();
+        } catch (\Exception $e) {
+            return [];
+        }
     }
 
     public function getCategoryReportData(): array
     {
-        $categories = OrderItem::whereHas('order', function ($query) {
-            $query->where('status', OrderStatus::DELIVERED)
-                  ->whereBetween('created_at', [$this->startDate, $this->endDate . ' 23:59:59']);
-        })
-        ->join('products', 'order_items.product_id', '=', 'products.id')
-        ->join('categories', 'products.category_id', '=', 'categories.id')
-        ->select('categories.name')
-        ->selectRaw('SUM(order_items.quantity) as total_quantity')
-        ->selectRaw('SUM(order_items.total) as total_revenue')
-        ->groupBy('categories.id', 'categories.name')
-        ->orderByDesc('total_revenue')
-        ->get();
+        if (!Schema::hasTable('order_items')) {
+            return [];
+        }
+        
+        try {
+            $categories = OrderItem::whereHas('order', function ($query) {
+                $query->where('status', OrderStatus::DELIVERED)
+                      ->whereBetween('created_at', [$this->startDate, $this->endDate . ' 23:59:59']);
+            })
+            ->join('products', 'order_items.product_id', '=', 'products.id')
+            ->join('categories', 'products.category_id', '=', 'categories.id')
+            ->select('categories.name')
+            ->selectRaw('SUM(order_items.quantity) as total_quantity')
+            ->selectRaw('SUM(order_items.total) as total_revenue')
+            ->groupBy('categories.id', 'categories.name')
+            ->orderByDesc('total_revenue')
+            ->get();
 
-        return $categories->toArray();
+            return $categories->toArray();
+        } catch (\Exception $e) {
+            return [];
+        }
     }
 
     public function getDailyRevenueData(): array

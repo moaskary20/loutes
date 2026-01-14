@@ -10,6 +10,7 @@ use App\Models\Product;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class FinancialDashboardWidget extends BaseWidget
 {
@@ -52,15 +53,26 @@ class FinancialDashboardWidget extends BaseWidget
 
         // هامش الربح (تقدير بناءً على تكلفة المنتجات)
         $monthRevenueTotal = $monthRevenue;
-        $monthCost = OrderItem::whereHas('order', function ($query) use ($thisMonth) {
-            $query->where('created_at', '>=', $thisMonth)
-                  ->where('status', OrderStatus::DELIVERED);
-        })
-        ->join('products', 'order_items.product_id', '=', 'products.id')
-        ->sum(DB::raw('order_items.quantity * COALESCE(products.cost_price, 0)'));
+        $monthCost = 0;
+        $monthProfit = $monthRevenueTotal;
+        $profitMargin = 0;
         
-        $monthProfit = $monthRevenueTotal - $monthCost;
-        $profitMargin = $monthRevenueTotal > 0 ? ($monthProfit / $monthRevenueTotal) * 100 : 0;
+        if (Schema::hasTable('order_items')) {
+            try {
+                $monthCost = OrderItem::whereHas('order', function ($query) use ($thisMonth) {
+                    $query->where('created_at', '>=', $thisMonth)
+                          ->where('status', OrderStatus::DELIVERED);
+                })
+                ->join('products', 'order_items.product_id', '=', 'products.id')
+                ->sum(DB::raw('order_items.quantity * COALESCE(products.cost_price, 0)'));
+                
+                $monthProfit = $monthRevenueTotal - $monthCost;
+                $profitMargin = $monthRevenueTotal > 0 ? ($monthProfit / $monthRevenueTotal) * 100 : 0;
+            } catch (\Exception $e) {
+                // If order_items table doesn't exist or query fails, use revenue as profit
+                $monthProfit = $monthRevenueTotal;
+            }
+        }
 
         // معدل النمو
         $growthRate = $lastMonthRevenue > 0 
