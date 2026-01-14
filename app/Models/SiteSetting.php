@@ -11,6 +11,7 @@ class SiteSetting extends Model
         'background_color',
         'use_background_image',
         'view_products_link',
+        'logo',
     ];
 
     protected $casts = [

@@ -74,6 +74,20 @@ class SiteSettings extends Page implements HasForms
                             ->visible(fn ($get) => !$get('use_background_image')),
                     ])
                     ->columns(2),
+                Section::make('شعار الموقع (Logo)')
+                    ->description('قم برفع شعار الموقع الذي سيظهر في الهيدر ولوحة التحكم')
+                    ->schema([
+                        FileUpload::make('logo')
+                            ->label('شعار الموقع')
+                            ->image()
+                            ->directory('site/logo')
+                            ->helperText('يُنصح برفع صورة بدقة عالية بصيغة PNG أو SVG مع خلفية شفافة')
+                            ->maxSize(2048)
+                            ->acceptedFileTypes(['image/png', 'image/svg+xml', 'image/jpeg', 'image/jpg'])
+                            ->previewable()
+                            ->downloadable()
+                            ->columnSpanFull(),
+                    ]),
                 Section::make('زر View Products')
                     ->description('إعدادات زر "View Products" الذي يظهر تحت صور السليدر')
                     ->schema([

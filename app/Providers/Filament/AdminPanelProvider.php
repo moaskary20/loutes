@@ -12,6 +12,7 @@ use App\Filament\Widgets\NotificationsWidget;
 use App\Filament\Widgets\OrdersStatsWidget;
 use App\Filament\Widgets\RevenueWidget;
 use App\Filament\Widgets\TopProductsWidget;
+use App\Models\SiteSetting;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -69,7 +70,13 @@ class AdminPanelProvider extends PanelProvider
                 TopProductsWidget::class,
             ])
             ->brandName('Loutes Store')
-            ->brandLogo(asset('images/logo.svg'))
+            ->brandLogo(function () {
+                $settings = SiteSetting::getSettings();
+                if ($settings->logo) {
+                    return asset('storage/' . $settings->logo);
+                }
+                return asset('images/logo.svg');
+            })
             ->favicon(asset('images/favicon.ico'))
             ->middleware([
                 EncryptCookies::class,
