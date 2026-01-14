@@ -1269,7 +1269,8 @@
                 <div class="contact-card-content">
                     <h3 class="contact-card-title">Send an Email</h3>
                     <div class="contact-card-info">
-                        <a href="mailto:info@lotussnacks.com">info@lotussnacks.com</a>
+                        <a href="mailto:info@lotus-co.com">info@lotus-co.com
+                        </a>
                     </div>
                 </div>
             </div>

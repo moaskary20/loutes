@@ -1799,6 +1799,10 @@
                 display: none;
             }
 
+            .slide img {
+                padding-top: 163px;
+            }
+
             .footer-content {
                 flex-direction: column;
                 gap: 30px;
