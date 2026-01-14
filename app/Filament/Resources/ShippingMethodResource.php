@@ -52,13 +52,13 @@ class ShippingMethodResource extends Resource
                         Forms\Components\TextInput::make('cost')
                             ->label('التكلفة')
                             ->numeric()
-                            ->prefix('ر.س')
+                            ->prefix('ج.م')
                             ->default(0)
                             ->step(0.01),
                         Forms\Components\TextInput::make('free_shipping_threshold')
                             ->label('حد الشحن المجاني')
                             ->numeric()
-                            ->prefix('ر.س')
+                            ->prefix('ج.م')
                             ->step(0.01),
                         Forms\Components\TextInput::make('estimated_days')
                             ->label('الأيام المتوقعة')
@@ -81,7 +81,7 @@ class ShippingMethodResource extends Resource
                                 Forms\Components\TextInput::make('cost')
                                     ->label('التكلفة')
                                     ->numeric()
-                                    ->prefix('ر.س')
+                                    ->prefix('ج.م')
                                     ->default(0)
                                     ->step(0.01)
                                     ->required()
@@ -117,11 +117,11 @@ class ShippingMethodResource extends Resource
                     ->badge(),
                 Tables\Columns\TextColumn::make('cost')
                     ->label('التكلفة')
-                    ->money('SAR')
+                    ->money('EGP')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('free_shipping_threshold')
                     ->label('حد الشحن المجاني')
-                    ->money('SAR')
+                    ->money('EGP')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('estimated_days')
                     ->label('الأيام المتوقعة')
