@@ -983,7 +983,7 @@
                                 @if($cartItem['product']->category)
                                     <div class="cart-item-category">{{ $cartItem['product']->category->name_en ?? $cartItem['product']->category->name }}</div>
                                 @endif
-                                <div class="cart-item-price">{{ number_format($cartItem['product']->price, 2) }} SAR</div>
+                                <div class="cart-item-price">{{ number_format($cartItem['product']->price, 2) }} EGP</div>
                             </div>
                             <div class="cart-item-quantity">
                                 <span class="quantity-label">Quantity</span>
@@ -995,7 +995,7 @@
                             </div>
                             <div class="cart-item-subtotal">
                                 <span class="cart-item-subtotal-label">Subtotal</span>
-                                <span class="cart-item-subtotal-value" data-product-id="{{ $cartItem['product']->id }}">{{ number_format($cartItem['subtotal'], 2) }} SAR</span>
+                                <span class="cart-item-subtotal-value" data-product-id="{{ $cartItem['product']->id }}">{{ number_format($cartItem['subtotal'], 2) }} EGP</span>
                                 <button class="cart-item-remove" data-product-id="{{ $cartItem['product']->id }}">Remove</button>
                             </div>
                         </div>
@@ -1007,15 +1007,15 @@
                     <h2 class="cart-summary-title">Order Summary</h2>
                     <div class="cart-summary-row">
                         <span class="cart-summary-label">Subtotal</span>
-                        <span class="cart-summary-value" id="cartSubtotal">{{ number_format($subtotal, 2) }} SAR</span>
+                        <span class="cart-summary-value" id="cartSubtotal">{{ number_format($subtotal, 2) }} EGP</span>
                     </div>
                     <div class="cart-summary-row">
                         <span class="cart-summary-label">Shipping</span>
-                        <span class="cart-summary-value" id="cartShipping">{{ number_format($shippingCost, 2) }} SAR</span>
+                        <span class="cart-summary-value" id="cartShipping">{{ number_format($shippingCost, 2) }} EGP</span>
                     </div>
                     <div class="cart-summary-row total">
                         <span class="cart-summary-label">Total</span>
-                        <span class="cart-summary-value total" id="cartTotal">{{ number_format($total, 2) }} SAR</span>
+                        <span class="cart-summary-value total" id="cartTotal">{{ number_format($total, 2) }} EGP</span>
                     </div>
                     <div class="cart-summary-actions">
                         <a href="{{ route('checkout.index') }}" class="checkout-btn">
@@ -1113,12 +1113,12 @@
                         // Update item subtotal
                         const subtotalElement = document.querySelector(`.cart-item-subtotal-value[data-product-id="${productId}"]`);
                         if (subtotalElement) {
-                            subtotalElement.textContent = data.item_subtotal + ' SAR';
+                            subtotalElement.textContent = data.item_subtotal + ' EGP';
                         }
 
                         // Update cart summary
-                        document.getElementById('cartSubtotal').textContent = data.subtotal + ' SAR';
-                        document.getElementById('cartTotal').textContent = data.total + ' SAR';
+                        document.getElementById('cartSubtotal').textContent = data.subtotal + ' EGP';
+                        document.getElementById('cartTotal').textContent = data.total + ' EGP';
 
                         // Update cart count
                         updateCartCount(data.cart_count);
@@ -1169,8 +1169,8 @@
                         }
 
                         // Update cart summary
-                        document.getElementById('cartSubtotal').textContent = data.subtotal + ' SAR';
-                        document.getElementById('cartTotal').textContent = data.total + ' SAR';
+                        document.getElementById('cartSubtotal').textContent = data.subtotal + ' EGP';
+                        document.getElementById('cartTotal').textContent = data.total + ' EGP';
 
                         // Update cart count
                         updateCartCount(data.cart_count);

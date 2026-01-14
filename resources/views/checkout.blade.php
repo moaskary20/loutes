@@ -946,22 +946,22 @@
                                     <div class="checkout-item-name">{{ $item['product']->name }}</div>
                                     <div class="checkout-item-quantity">Qty: {{ $item['quantity'] }}</div>
                                 </div>
-                                <div class="checkout-item-price">{{ number_format($item['subtotal'], 2) }} SAR</div>
+                                <div class="checkout-item-price">{{ number_format($item['subtotal'], 2) }} EGP</div>
                             </div>
                         @endforeach
                     </div>
 
                     <div class="checkout-summary-row">
                         <span class="checkout-summary-label">Subtotal</span>
-                        <span class="checkout-summary-value" id="checkoutSubtotal">{{ number_format($subtotal, 2) }} SAR</span>
+                        <span class="checkout-summary-value" id="checkoutSubtotal">{{ number_format($subtotal, 2) }} EGP</span>
                     </div>
                     <div class="checkout-summary-row">
                         <span class="checkout-summary-label">Shipping</span>
-                        <span class="checkout-summary-value" id="checkoutShipping">{{ number_format($shippingCost, 2) }} SAR</span>
+                        <span class="checkout-summary-value" id="checkoutShipping">{{ number_format($shippingCost, 2) }} EGP</span>
                     </div>
                     <div class="checkout-summary-row total">
                         <span class="checkout-summary-label">Total</span>
-                        <span class="checkout-summary-value total" id="checkoutTotal">{{ number_format($total, 2) }} SAR</span>
+                        <span class="checkout-summary-value total" id="checkoutTotal">{{ number_format($total, 2) }} EGP</span>
                     </div>
 
                     <button type="submit" class="place-order-btn" id="placeOrderBtn">
@@ -1035,7 +1035,7 @@
                                 <div class="shipping-method-description">${method.description || ''} ${method.estimated_days ? `(${method.estimated_days} days)` : ''}</div>
                             </div>
                             <div class="shipping-method-cost">
-                                ${freeShipping ? 'FREE' : finalCost.toFixed(2) + ' SAR'}
+                                ${freeShipping ? 'FREE' : finalCost.toFixed(2) + ' EGP'}
                             </div>
                         </label>
                     `;
@@ -1078,8 +1078,8 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        document.getElementById('checkoutShipping').textContent = data.shipping_cost + ' SAR';
-                        document.getElementById('checkoutTotal').textContent = data.total + ' SAR';
+                        document.getElementById('checkoutShipping').textContent = data.shipping_cost + ' EGP';
+                        document.getElementById('checkoutTotal').textContent = data.total + ' EGP';
                     }
                 })
                 .catch(error => {

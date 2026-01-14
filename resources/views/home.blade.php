@@ -1045,7 +1045,7 @@
 
         /* قسم التصدير */
         .export-section {
-            padding: 80px 20px;
+            padding: 8px 20px;
             background: #f5f5f5;
         }
 
@@ -1055,29 +1055,24 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 0;
-            min-height: 600px;
+            min-height: 30px;
         }
 
         .export-product-side {
-            background: linear-gradient(135deg, #E8C95B 0%, #F5D87A 100%);
+            background: transparent;
             position: relative;
-            padding: 60px 40px;
+            padding: 0;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
         }
 
-        .export-product-side::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
-            border-radius: 50%;
+        .export-product-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .export-logo {
@@ -1212,7 +1207,7 @@
 
         .export-text-side {
             background: white;
-            padding: 60px 50px;
+            padding: 6px 25px;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -1267,7 +1262,7 @@
 
         /* قسم الفيديو (معكوس) */
         .video-section {
-            padding: 80px 20px;
+            padding: 8px 20px;
             background: #f5f5f5;
         }
 
@@ -1277,12 +1272,12 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 0;
-            min-height: 600px;
+            min-height: 30px;
         }
 
         .video-text-side {
             background: white;
-            padding: 60px 50px;
+            padding: 6px 25px;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -1336,25 +1331,20 @@
         }
 
         .video-display-side {
-            background: linear-gradient(135deg, #E8C95B 0%, #F5D87A 100%);
+            background: transparent;
             position: relative;
-            padding: 60px 40px;
+            padding: 0;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
         }
 
-        .video-display-side::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
-            border-radius: 50%;
+        .video-display-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .video-logo {
@@ -1804,7 +1794,7 @@
             }
 
             .slide img {
-                padding-top: 163px;
+                padding-top: 210px;
             }
 
             .footer-content {
@@ -2395,41 +2385,9 @@ Discover excellence in every detail.
     <!-- قسم التصدير -->
     <section class="export-section">
         <div class="export-container">
-            <!-- القسم الأيسر: إعلان المنتج -->
+            <!-- القسم الأيسر: الصورة فقط -->
             <div class="export-product-side">
-                <div class="export-logo">
-                    <div class="export-logo-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                    <div class="export-logo-text">
-                        <div class="export-logo-ar">اللوتس</div>
-                        <div class="export-logo-en">LOTUS</div>
-                        <div class="export-logo-spec">مواصفات خاصة</div>
-                    </div>
-                </div>
-                <div class="export-brand">
-                    <div class="export-brand-ar">دافنشي</div>
-                    <div class="export-brand-en">DaVinci</div>
-                </div>
-                <div class="export-product-display">
-                    <div class="export-product-container">
-                        <div class="export-product-image">
-                            <svg viewBox="0 0 200 200" fill="none">
-                                <path d="M100 20 L180 70 L180 130 L100 180 L20 130 L20 70 Z" fill="rgba(255,255,255,0.9)" stroke="#333" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <div class="export-product-label">
-                            <div class="export-label-brand">
-                                <span>دافنشي</span>
-                                <span>DaVinci</span>
-                            </div>
-                            <div class="export-label-title">MILK CHOCOLATE COATED HAZELNUT</div>
-                            <div class="export-label-title-ar">بندق مغطى بالشوكولا</div>
-                        </div>
-                    </div>
-                </div>
+                <img src="{{ asset('storage/sliders/banner1.png') }}" alt="Product" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <!-- القسم الأيمن: النص الوصفي -->
             <div class="export-text-side">
@@ -2514,40 +2472,9 @@ Our Objectives
 
                 </div>
             </div>
-            <!-- القسم الأيمن: إعلان الفيديو -->
+            <!-- القسم الأيمن: الصورة فقط -->
             <div class="video-display-side">
-                <div class="video-logo">
-                    <div class="video-logo-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                    <div class="video-logo-text">
-                        <div class="video-logo-ar">اللوتس</div>
-                        <div class="video-logo-en">LOTUS</div>
-                        <div class="video-logo-spec">مواصفات خاصة</div>
-                    </div>
-                </div>
-                <div class="video-brand">
-                    <div class="video-brand-ar">دافنشي</div>
-                    <div class="video-brand-en">DaVinci</div>
-                </div>
-                <div class="video-player-container">
-                    <div class="video-wrapper">
-                        <video class="video-player" controls poster="{{ asset('storage/video-poster.jpg') }}">
-                            <source src="{{ asset('storage/promotional-video.mp4') }}" type="video/mp4">
-                            <source src="{{ asset('storage/promotional-video.webm') }}" type="video/webm">
-                            المتصفح الخاص بك لا يدعم تشغيل الفيديو.
-                        </video>
-                        <div class="video-overlay">
-                            <div class="video-play-button">
-                                <svg viewBox="0 0 24 24" fill="white">
-                                    <path d="M8 5v14l11-7z"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <img src="{{ asset('storage/sliders/banner2.png') }}" alt="Product" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
         </div>
     </section>

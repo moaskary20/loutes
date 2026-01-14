@@ -1034,9 +1034,9 @@
                 @endif
 
                 <div class="product-price-section">
-                    <span class="product-price">{{ number_format($product->price, 2) }} SAR</span>
+                    <span class="product-price">{{ number_format($product->price, 2) }} EGP</span>
                     @if($product->original_price && $product->original_price > $product->price)
-                        <span class="product-original-price">{{ number_format($product->original_price, 2) }} SAR</span>
+                        <span class="product-original-price">{{ number_format($product->original_price, 2) }} EGP</span>
                         @php
                             $discountPercent = round((($product->original_price - $product->price) / $product->original_price) * 100);
                         @endphp
@@ -1105,7 +1105,7 @@
                                 <h3 class="related-product-title">
                                     <a href="{{ route('product.show', $relatedProduct) }}">{{ $relatedProduct->name }}</a>
                                 </h3>
-                                <div class="related-product-price">{{ number_format($relatedProduct->price, 2) }} SAR</div>
+                                <div class="related-product-price">{{ number_format($relatedProduct->price, 2) }} EGP</div>
                             </div>
                         </a>
                     </div>

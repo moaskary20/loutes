@@ -977,7 +977,7 @@
                             @if($product->category)
                                 <div class="product-card-category">{{ $product->category->name_en ?? $product->category->name }}</div>
                             @endif
-                            <div class="product-card-price">{{ number_format($product->price, 2) }} SAR</div>
+                            <div class="product-card-price">{{ number_format($product->price, 2) }} EGP</div>
                             @php
                                 $avgRating = $product->reviews_avg_rating ?? $product->reviews->avg('rating');
                             @endphp
