@@ -31,6 +31,7 @@
             margin-bottom: 30px;
             border-bottom: 2px solid #333;
             padding-bottom: 20px;
+            z-index: 999;
         }
         .header h1 {
             font-size: 28px;

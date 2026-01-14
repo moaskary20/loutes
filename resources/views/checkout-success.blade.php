@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Success - Loutes Store</title>
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
+    <title>Shopping Cart - Loutes Store</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
@@ -17,142 +18,154 @@
         body {
             font-family: 'Tajawal', sans-serif;
             direction: ltr;
+            overflow-x: hidden;
             background: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
         }
 
-        .success-container {
-            background: white;
-            border-radius: 15px;
-            padding: 60px 40px;
-            max-width: 600px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        /* Header (copied from products.blade.php) */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            max-width: 1400px;
+            z-index: 999;
+            background: transparent;
+            padding: 15px;
+            box-sizing: border-box;
         }
 
-        .success-icon {
-            width: 100px;
-            height: 100px;
-            background: #28a745;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 30px;
-            font-size: 50px;
+        .header-content {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .top-bar {
+            background: rgba(206, 173, 66, 0.95);
+            backdrop-filter: blur(10px);
             color: white;
+            padding: 8px 15px;
+            font-size: 14px;
         }
 
-        .success-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        .success-message {
-            font-size: 1.1rem;
-            color: #777;
-            margin-bottom: 30px;
-            line-height: 1.7;
-        }
-
-        .order-info {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 30px;
-            text-align: left;
-        }
-
-        .order-info-row {
+        .top-bar-content {
+            max-width: 100%;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid #e0e0e0;
+            align-items: center;
         }
 
-        .order-info-row:last-child {
-            border-bottom: none;
-        }
-
-        .order-info-label {
-            font-weight: 600;
-            color: #555;
-        }
-
-        .order-info-value {
-            color: #333;
-            font-weight: 700;
-        }
-
-        .success-actions {
+        .top-bar-left {
             display: flex;
+            align-items: center;
             gap: 15px;
+        }
+
+        .top-bar-center {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
             justify-content: center;
         }
 
-        .btn {
-            padding: 12px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            display: inline-block;
+        .language-selector {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
         }
 
-        .btn-primary {
+        .welcome-text {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .main-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .main-nav-content {
+            max-width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .get-quote-btn {
             background: #cead42;
             color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Tajawal', sans-serif;
         }
 
-        .btn-primary:hover {
+        .get-quote-btn:hover {
             background: #b89a35;
             transform: translateY(-2px);
         }
 
-        .btn-secondary {
-            background: #f0f0f0;
+        .search-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
             color: #333;
+            font-size: 18px;
+            transition: all 0.3s;
         }
 
-        .btn-secondary:hover {
-            background: #e0e0e0;
+        .search-icon:hover {
+            color: #cead42;
         }
-    </style>
-</head>
-<body>
-    <div class="success-container">
-        <div class="success-icon">✓</div>
-        <h1 class="success-title">Order Placed Successfully!</h1>
-        <p class="success-message">
-            Thank you for your order. We have received your order and will begin processing it right away.
-        </p>
 
-        <div class="order-info">
-            <div class="order-info-row">
-                <span class="order-info-label">Order Number:</span>
-                <span class="order-info-value">{{ $order->order_number }}</span>
-            </div>
-            <div class="order-info-row">
-                <span class="order-info-label">Total Amount:</span>
-                <span class="order-info-value">{{ number_format($order->total, 2) }} SAR</span>
-            </div>
-            <div class="order-info-row">
-                <span class="order-info-label">Status:</span>
-                <span class="order-info-value">{{ $order->status->label() }}</span>
-            </div>
-        </div>
+        .nav-center {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            flex: 1;
+            justify-content: center;
+        }
 
-        <div class="success-actions">
-            <a href="{{ route('home') }}" class="btn btn-primary">Continue Shopping</a>
-            <a href="{{ route('products') }}" class="btn btn-secondary">View Products</a>
-        </div>
-    </div>
-</body>
-</html>
+        .nav-link {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 5px;
+            transition: all 0.3s;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #cead42;
+            transform: scaleX(0);
+       

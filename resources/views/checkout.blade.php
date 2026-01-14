@@ -30,7 +30,7 @@
             transform: translateX(-50%);
             width: 95%;
             max-width: 1400px;
-            z-index: 1000;
+            z-index: 999;
             background: transparent;
             padding: 15px;
             box-sizing: border-box;
@@ -730,6 +730,10 @@
             }
 
             .get-quote-btn {
+                display: none;
+            }
+
+            .welcome-text {
                 display: none;
             }
         }
