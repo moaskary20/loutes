@@ -480,7 +480,7 @@
 
         .slide-content {
             position: absolute;
-            top: 250px;
+            top: 200px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 2;
@@ -497,12 +497,54 @@
             margin-bottom: 1rem;
             font-weight: 700;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 0, 0, 0.5);
+            animation: fadeInLeft 1.2s ease-out 0.3s forwards;
+            opacity: 0;
         }
 
         .slide-content p {
             font-size: 1.2rem;
             margin-bottom: 1.5rem;
             text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7), 0 0 15px rgba(0, 0, 0, 0.4);
+            animation: fadeInRight 1.2s ease-out 0.5s forwards;
+            opacity: 0;
+        }
+
+        .slide-content a {
+            animation: fadeInUp 1s ease-out 0.7s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .slide-content a {
