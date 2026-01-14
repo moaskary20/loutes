@@ -13,7 +13,17 @@ class CheckAdminRole
     {
         $user = auth()->user();
 
-        if (!$user || !$user->canAccessAdmin()) {
+        if (!$user) {
+            abort(403, 'ليس لديك صلاحية للوصول إلى لوحة التحكم');
+        }
+
+        // إذا كان role غير محدد (null)، افترض أنه admin (للمستخدمين القدامى)
+        if ($user->role === null) {
+            $user->role = UserRole::Admin;
+            $user->save();
+        }
+
+        if (!$user->canAccessAdmin()) {
             abort(403, 'ليس لديك صلاحية للوصول إلى لوحة التحكم');
         }
 
