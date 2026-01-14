@@ -905,13 +905,7 @@
                             </div>
                             <span class="cart-badge" id="cartBadge">{{ \App\Helpers\CartHelper::getCartCount() > 0 ? \App\Helpers\CartHelper::getCartCount() : '' }}</span>
                         </a>
-                        <div class="logo">
-                            <div class="logo-icon">L</div>
-                            <div class="logo-text">
-                                <span class="logo-text-ar">اللوتس</span>
-                                <span class="logo-text-en">LOTUS</span>
-                            </div>
-                        </div>
+                        @include('partials.logo')
                     </div>
                 </div>
             </nav>
@@ -922,13 +916,7 @@
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-content">
             <div class="mobile-menu-header">
-                <div class="mobile-menu-logo">
-                    <div class="logo-icon" style="width: 40px; height: 40px; font-size: 20px;">L</div>
-                    <div class="logo-text">
-                        <span class="logo-text-ar" style="font-size: 18px;">اللوتس</span>
-                        <span class="logo-text-en" style="font-size: 12px;">LOTUS</span>
-                    </div>
-                </div>
+                @include('partials.mobile-logo')
                 <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
                     <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>

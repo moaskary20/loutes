@@ -1208,13 +1208,7 @@
                             </div>
                             <span class="cart-badge" id="cartBadge">{{ \App\Helpers\CartHelper::getCartCount() > 0 ? \App\Helpers\CartHelper::getCartCount() : '' }}</span>
                         </a>
-                        <div class="logo">
-                            <div class="logo-icon">L</div>
-                            <div class="logo-text">
-                                <span class="logo-text-ar">اللوتس</span>
-                                <span class="logo-text-en">LOTUS</span>
-                            </div>
-                        </div>
+                        @include('partials.logo')
                     </div>
                 </div>
             </nav>
