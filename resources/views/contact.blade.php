@@ -605,6 +605,10 @@
             .welcome-text {
                 display: none;
             }
+
+            .slide img {
+                padding-top: 220px;
+            }
         }
 
         @media (max-width: 968px) {
