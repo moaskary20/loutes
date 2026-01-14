@@ -11,6 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // Drop dependent tables first (in case they exist)
+        Schema::dropIfExists('order_status_histories');
+        Schema::dropIfExists('order_items');
         // Drop table if exists (in case it was created without foreign keys)
         Schema::dropIfExists('orders');
         
