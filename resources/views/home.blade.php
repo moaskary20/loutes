@@ -496,11 +496,13 @@
             font-size: 2.5rem;
             margin-bottom: 1rem;
             font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 0, 0, 0.5);
         }
 
         .slide-content p {
             font-size: 1.2rem;
             margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7), 0 0 15px rgba(0, 0, 0, 0.4);
         }
 
         .slide-content a {
