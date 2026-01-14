@@ -84,9 +84,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ])
-            ->middleware([
                 CheckAdminRole::class,
-            ], isPersistent: true);
+            ]);
     }
 }
