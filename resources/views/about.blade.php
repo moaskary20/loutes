@@ -1372,12 +1372,12 @@ Today, the story continues with new chapters driven by passion, quality, and a g
                 </nav>
             </div>
             <div class="footer-social">
-                <a href="https://www.facebook.com/share/18ALRh5g9A/?mibextid=wwXIfr" class="footer-social-icon footer-social-facebook" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com/share/18ALRh5g9A/?mibextid=wwXIfr" class="footer-social-icon footer-social-facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 2C6.477 2 2 6.477 2 12c0 5.013 3.693 9.153 8.505 9.876v-6.988H8.031v-2.888h2.474v-2.2c0-2.444 1.456-3.794 3.683-3.794 1.067 0 2.183.191 2.183.191v2.4h-1.23c-1.211 0-1.588.751-1.588 1.523v1.83h2.691l-.43 2.888h-2.261v6.988C18.307 21.153 22 17.013 22 12c0-5.523-4.477-10-10-10z"/>
                     </svg>
                 </a>
-                <a href="https://www.instagram.com/lotussweetsegypt?igsh=MWUwaHAwbzJtcXI0Yw==" class="footer-social-icon footer-social-instagram" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/lotussweetsegypt?igsh=MWUwaHAwbzJtcXI0Yw==" class="footer-social-icon footer-social-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
