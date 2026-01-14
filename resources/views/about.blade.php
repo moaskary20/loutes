@@ -597,77 +597,21 @@
 
         .about-product-ad {
             position: relative;
-            background: linear-gradient(135deg, #d4a574 0%, #c9a06b 100%);
-            border-radius: 15px;
-            padding: 60px 40px;
-            min-height: 500px;
+            background: transparent;
+            border-radius: 0;
+            padding: 0;
+            min-height: auto;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
         }
 
-        .about-product-ad::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+        .about-product-ad img {
             width: 100%;
             height: 100%;
-            background: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,100 Q50,50 100,100 T200,100' stroke='%23b8956a' stroke-width='2' fill='none' opacity='0.3'/%3E%3Cpath d='M0,150 Q50,100 100,150 T200,150' stroke='%23b8956a' stroke-width='2' fill='none' opacity='0.3'/%3E%3C/svg%3E") repeat;
-            opacity: 0.2;
-        }
-
-        .about-product-container {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-        }
-
-        .about-product-image {
-            max-width: 100%;
-            height: auto;
-            max-height: 400px;
-            object-fit: contain;
-            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
-        }
-
-        .about-product-text {
-            position: absolute;
-            right: -20px;
-            top: 50%;
-            transform: translateY(-50%) rotate(-90deg);
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: white;
-            white-space: nowrap;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            letter-spacing: 2px;
-        }
-
-        .about-product-decorative {
-            position: absolute;
-            z-index: 1;
-        }
-
-        .about-product-sphere {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            position: absolute;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
-        }
-
-        .about-product-sphere.silver {
-            background: linear-gradient(135deg, #e8e8e8 0%, #c0c0c0 100%);
-            left: 10%;
-            top: 20%;
-        }
-
-        .about-product-sphere.gold {
-            background: linear-gradient(135deg, #ffd700 0%, #ffb347 100%);
-            right: 15%;
-            bottom: 25%;
+            object-fit: cover;
+            display: block;
         }
 
         @media (max-width: 968px) {
@@ -695,11 +639,7 @@
             }
 
             .about-product-ad {
-                min-height: 400px;
-            }
-
-            .about-product-text {
-                display: none;
+                min-height: auto;
             }
         }
 
@@ -1182,12 +1122,7 @@ Today, the story continues with new chapters driven by passion, quality, and a g
 
         <!-- Product Ad -->
         <div class="about-product-ad">
-            <div class="about-product-sphere silver"></div>
-            <div class="about-product-sphere gold"></div>
-            <div class="about-product-container">
-                <img src="https://via.placeholder.com/400x500/8B4513/FFFFFF?text=DaVinci+Premium+Selection" alt="DaVinci Premium Selection" class="about-product-image">
-            </div>
-            <div class="about-product-text">PREMIUM QUALITY REAL CHOCOLATE</div>
+            <img src="{{ asset('storage/sliders/banner3.png') }}" alt="Product" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
     </section>
 
