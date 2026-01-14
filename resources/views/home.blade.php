@@ -2274,18 +2274,16 @@
     <section class="about-section">
         <div class="about-container">
             <h2 class="about-heading">
-                Developing The Concept Of Chocolate, Snacks And Crackers Industry And Upgrade It To Provide All That With The Highest Quality
+                We believe that success begins with the details
             </h2>
             <div class="about-content">
                 <p class="about-paragraph">
-                    Established on the basis of experience inherited through generations, with the participation of experts in the fields of agricultural investment and food industries for more than forty years, to become one of the largest companies specialized in the field of manufacturing and processing of grains, seeds and nuts in the Egyptian market.
+                That’s why we carefully select premium raw materials, apply strict quality control systems, and continuously invest in advanced production technologies.
                 </p>
                 <p class="about-paragraph">
-                    Development. Creativity. Trust. Our policies depend mainly on creativity, trust, and providing everything new in the world of entertainment with the best quality
-                </p>
+                With a skilled and passionate team, our company has earned a strong reputation in the market and gained the trust of customers by providing products that combine quality, refined taste, and reliability.                </p>
                 <p class="about-paragraph">
-                    We are leaders in production of chocolates, snacks, crackers & nuts industry in best quality using smart and new technologies starting from choosing premium raw materials and agricultural crops to produce healthy and safe food packed by Fully Automated packaging process to produce wide range of products in a modern and attractive presentation.
-                </p>
+                Today, we continue our journey of regional expansion and market growth while staying true to our core values that guide us in delivering excellence and creating moments of joy.                </p>
             </div>
         </div>
     </section>
@@ -2362,8 +2360,12 @@
             <div class="products-text-content">
                 <h2 class="products-heading">200+ Many distinctive products with the best quality and great taste</h2>
                 <p class="products-description">
-                    We provide our customers with many distinctive products in the sections of chocolate, dragees, crackers, and cereals, and we always work to choose the best raw materials to provide the best quality and reasonable prices.
-                </p>
+                Crafting Joy, One Moment at a Time
+
+Experience a world where quality, craftsmanship, and creativity come together.
+We are committed to delivering products made with passion, refined through innovation, and trusted for their consistency.
+Discover excellence in every detail.
+</p>
                 <a href="{{ $siteSettings->view_products_link ?? '#' }}" class="products-view-btn">
                     <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="margin-left: 5px;">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
@@ -2431,14 +2433,22 @@
                 </div>
                 <div class="export-text-content">
                     <p class="export-text-orange">
-                        We export a different variety of products to multiple regions. We always comply with the international standard and destination countries regulations
+                    Food Safety Policy
                     </p>
                     <p class="export-text-grey">
-                        develop the concept of chocolate, snacks and crackers industry and upgrade it to provide all that is new with the highest quality and the latest technology starting from choosing the best raw materials and agricultural crops to produce healthy and safe food and ending with automatic packaging to present the products in a modern and attractive way
-                    </p>
-                    <p class="export-text-grey">
-                        Export is a project itself: thus. We have assigned experts, a well educated & dedicated team for this project to provide complete service solutions such as committed delivery date, quality and logistics support to satisfy our partners and end consumers.
-                    </p>
+
+                    We ensure safe and healthy products through:
+<br>
+Adopting international safety standards.
+
+Closely monitoring daily operations and adhering to hygiene procedures.
+<br>
+Effectively managing the supply chain to ensure safety from source to customer.
+<br>
+Continuously training staff on the latest safety practices.
+<br>
+Periodically reviewing systems and policies to ensure compliance and continuous improvement.                    </p>
+
                 </div>
             </div>
         </div>
@@ -2464,14 +2474,29 @@
                 </div>
                 <div class="video-text-content">
                     <p class="video-text-orange">
-                        We export a different variety of products to multiple regions. We always comply with the international standard and destination countries regulations
+Our Objectives
                     </p>
                     <p class="video-text-grey">
-                        develop the concept of chocolate, snacks and crackers industry and upgrade it to provide all that is new with the highest quality and the latest technology starting from choosing the best raw materials and agricultural crops to produce healthy and safe food and ending with automatic packaging to present the products in a modern and attractive way
-                    </p>
-                    <p class="video-text-grey">
-                        Export is a project itself: thus. We have assigned experts, a well educated & dedicated team for this project to provide complete service solutions such as committed delivery date, quality and logistics support to satisfy our partners and end consumers.
-                    </p>
+                    1. Achieve high performance levels that ensure consistent and sustainable quality.
+<br>
+
+2. Develop an innovative and motivating work environment for employees.
+<br>
+
+3. Expand the company’s presence in local and regional markets.
+<br>
+
+4. Enhance operational efficiency and invest in modern technologies.
+<br>
+
+5. Build long-term trust-based relationships with clients and partners.
+<br>
+
+6. Improve customer experience through continuous development and effective engagement.
+<br>
+
+7. Implement the highest safety standards and comply with local and international regulations.                    </p>
+
                 </div>
             </div>
             <!-- القسم الأيمن: إعلان الفيديو -->

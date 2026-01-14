@@ -1136,14 +1136,17 @@
         <h2 class="about-main-heading">Lotus For Food Industries</h2>
         <div class="about-text-content">
             <p class="about-paragraph">
-                Established on the basis of experience inherited through generations, with the participation of experts in the fields of agricultural investment and food industries for more than forty years, to become one of the largest companies specialized in the field of manufacturing and processing of grains, seeds and nuts in the Egyptian market.
+                We are a specialized manufacturing company dedicated to delivering high-quality products that offer an exceptional experience to our customers.
+<br>
+Our foundation is built on a clear vision centered around innovation, commitment, and operating with world-class standards at every stage of production.
+<br>
+We believe that success begins with the details. That’s why we carefully select premium raw materials, apply strict quality control systems, and continuously invest in advanced production technologies.
+<br>
+With a skilled and passionate team, our company has earned a strong reputation in the market and gained the trust of customers by providing products that combine quality, refined taste, and reliability.
+<br>
+Today, we continue our journey of regional expansion and market growth while staying true to our core values that guide us in delivering excellence and creating moments of joy.
             </p>
-            <p class="about-paragraph">
-                Our policies depend mainly on creativity, trust, and providing everything new in the world of entertainment with the best quality
-            </p>
-            <p class="about-paragraph">
-                We are leaders in production of chocolates, snacks, crackers & nuts industry in best quality using smart and new technologies starting from choosing premium raw materials and agricultural crops to produce healthy and safe food packed by Fully Automated packaging process to produce wide range of products in a modern and attractive presentation.
-            </p>
+
         </div>
     </section>
 
@@ -1152,11 +1155,18 @@
         <!-- Text Content -->
         <div class="about-story-content">
             <h2 class="about-story-heading">
-                And the first production idea began in 1993 with the desire of its founders to manufacture chocolate products, crackers and pastries
-            </h2>
+            Our Story
+                    </h2>
             <p class="about-story-text">
-                that serve the field in a new and different way and with the best quality at all by using the best equipment and production lines and by employing people with experience and competencies in the field of food production to produce a distinguished group of products that It won the admiration of most customers and gourmets of all ages in Egypt and all countries of the Middle East.
-            </p>
+
+               Our journey began with a simple passion that grew into a dream—one that evolved into a project aiming to become a distinguished name in the world of manufacturing.
+            <br>
+The company was founded on the desire to offer a unique experience that reflects craftsmanship, authenticity, and a deep commitment to quality.
+<br>
+Over time, our ideas matured, our capabilities expanded, and we built a strong identity based on innovation, quality, and teamwork.
+<br>
+Like any successful journey, we faced challenges in the early days—but determination shaped who we are today. Every step strengthened our expertise, refined our processes, and elevated the standard of what we deliver.
+Today, the story continues with new chapters driven by passion, quality, and a genuine desire to create value and serve our customers with excellence            </p>
         </div>
 
         <!-- Product Ad -->
