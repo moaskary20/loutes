@@ -57,3 +57,38 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Deployment Instructions
+
+### Fix 403 Forbidden Error for Storage Files
+
+If you encounter a 403 Forbidden error when accessing storage files (like images) on the production server, follow these steps:
+
+1. **Create the storage symbolic link:**
+   ```bash
+   php artisan storage:link
+   ```
+
+2. **Set correct permissions:**
+   ```bash
+   chmod -R 755 storage
+   chmod -R 755 public/storage
+   ```
+
+3. **Ensure the storage directory exists:**
+   ```bash
+   mkdir -p storage/app/public/sliders
+   ```
+
+4. **If the symbolic link doesn't work, create it manually:**
+   ```bash
+   ln -s /path/to/your/project/storage/app/public /path/to/your/project/public/storage
+   ```
+
+5. **Verify the link:**
+   ```bash
+   ls -la public/storage
+   ```
+   You should see: `storage -> /path/to/storage/app/public`
+
+**Note:** Make sure the web server user (www-data, nginx, apache, etc.) has read permissions on the storage directory.
