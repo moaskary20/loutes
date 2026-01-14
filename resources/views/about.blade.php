@@ -862,6 +862,13 @@
             gap: 15px;
         }
 
+        .footer-logo img {
+            max-height: 50px;
+            max-width: 150px;
+            object-fit: contain;
+            display: block;
+        }
+
         .footer-logo-icon {
             width: 50px;
             height: 50px;
@@ -1332,15 +1339,25 @@ Today, the story continues with new chapters driven by passion, quality, and a g
         <div class="footer-container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <div class="footer-logo-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                    <div class="footer-logo-text">
-                        <div class="footer-logo-ar">اللوتس</div>
-                        <div class="footer-logo-en">L O T U S</div>
-                    </div>
+                    @php
+                        $logoUrl = \App\Helpers\SiteHelper::getLogo();
+                        $hasCustomLogo = \App\Helpers\SiteHelper::hasCustomLogo();
+                    @endphp
+                    @if($hasCustomLogo)
+                        <a href="{{ route('home') }}" style="display: inline-block;">
+                            <img src="{{ $logoUrl }}" alt="Logo">
+                        </a>
+                    @else
+                        <div class="footer-logo-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <div class="footer-logo-text">
+                            <div class="footer-logo-ar">اللوتس</div>
+                            <div class="footer-logo-en">L O T U S</div>
+                        </div>
+                    @endif
                 </div>
                 <nav class="footer-nav">
                     <a href="{{ route('home') }}" class="footer-nav-link">Home</a>
