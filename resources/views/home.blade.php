@@ -993,17 +993,30 @@
 
         .product-card-image {
             width: 100%;
-            height: 200px;
+            height: 250px;
             background: #f5f5f5;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #999;
             font-size: 3rem;
+            overflow: hidden;
+        }
+
+        .product-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover .product-card-image img {
+            transform: scale(1.05);
         }
 
         .product-card-body {
             padding: 20px;
+            text-align: center;
         }
 
         .product-card-title {
@@ -1020,6 +1033,19 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 500;
+        }
+
+        .product-card-price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #cead42;
+            margin-top: 10px;
+        }
+
+        .product-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
         .products-carousel-dots {
@@ -2307,23 +2333,26 @@
                             <div class="products-cards-slide">
                                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
                                     @foreach($chunk as $product)
-                                        <div class="product-card">
-                                            <div class="product-card-image">
-                                                @if($product->images->first())
-                                                    <img src="{{ asset('storage/' . $product->images->first()->image) }}" alt="{{ $product->name }}" style="width: 100%; height: 100%; object-fit: cover;">
-                                                @else
-                                                    <svg width="60" height="60" fill="#999" viewBox="0 0 24 24">
-                                                        <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                                                    </svg>
-                                                @endif
+                                        <a href="{{ route('product.show', $product) }}" class="product-card-link">
+                                            <div class="product-card">
+                                                <div class="product-card-image">
+                                                    @if($product->images->first())
+                                                        <img src="{{ asset('storage/' . $product->images->first()->image) }}" alt="{{ $product->name }}">
+                                                    @else
+                                                        <svg width="60" height="60" fill="#999" viewBox="0 0 24 24">
+                                                            <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                                        </svg>
+                                                    @endif
+                                                </div>
+                                                <div class="product-card-body">
+                                                    <h3 class="product-card-title">{{ $product->name }}</h3>
+                                                    @if($product->category)
+                                                        <p class="product-card-subtitle">{{ strtoupper($product->category->name_en ?? $product->category->name) }}</p>
+                                                    @endif
+                                                    <div class="product-card-price">{{ number_format($product->price, 2) }} EGP</div>
+                                                </div>
                                             </div>
-                                            <div class="product-card-body">
-                                                <h3 class="product-card-title">{{ $product->name }}</h3>
-                                                @if($product->category)
-                                                    <p class="product-card-subtitle">{{ strtoupper($product->category->name) }}</p>
-                                                @endif
-                                            </div>
-                                        </div>
+                                        </a>
                                     @endforeach
                                 </div>
                             </div>
