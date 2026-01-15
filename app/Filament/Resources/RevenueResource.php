@@ -56,23 +56,23 @@ class RevenueResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('subtotal')
                     ->label('المجموع الفرعي')
-                    ->money('SAR')
+                    ->money('EGP')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('tax_amount')
                     ->label('الضريبة')
-                    ->money('SAR')
+                    ->money('EGP')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('shipping_cost')
                     ->label('الشحن')
-                    ->money('SAR')
+                    ->money('EGP')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('discount_amount')
                     ->label('الخصم')
-                    ->money('SAR')
+                    ->money('EGP')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('total')
                     ->label('الإجمالي')
-                    ->money('SAR')
+                    ->money('EGP')
                     ->sortable()
                     ->weight('bold'),
                 Tables\Columns\TextColumn::make('payment_method')

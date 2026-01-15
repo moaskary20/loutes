@@ -88,40 +88,40 @@ class FinancialDashboardWidget extends BaseWidget
         $paidRevenue = Order::where('payment_status', PaymentStatus::PAID)->sum('total');
 
         return [
-            Stat::make('إيرادات اليوم', number_format($todayRevenue, 2) . ' ر.س')
+            Stat::make('إيرادات اليوم', number_format($todayRevenue, 2) . ' ج.م')
                 ->description($todayOrders . ' طلب')
                 ->descriptionIcon('heroicon-m-currency-dollar')
                 ->color('success')
                 ->chart($this->getDailyRevenueChart()),
 
-            Stat::make('إيرادات الشهر', number_format($monthRevenue, 2) . ' ر.س')
+            Stat::make('إيرادات الشهر', number_format($monthRevenue, 2) . ' ج.م')
                 ->description($monthOrders . ' طلب - ' . number_format($growthRate, 1) . '% نمو')
                 ->descriptionIcon('heroicon-m-calendar')
                 ->color('primary')
                 ->chart($this->getMonthlyRevenueChart()),
 
-            Stat::make('إيرادات السنة', number_format($yearRevenue, 2) . ' ر.س')
+            Stat::make('إيرادات السنة', number_format($yearRevenue, 2) . ' ج.م')
                 ->description($yearOrders . ' طلب')
                 ->descriptionIcon('heroicon-m-chart-bar')
                 ->color('info'),
 
-            Stat::make('صافي الربح (هذا الشهر)', number_format($monthProfit, 2) . ' ر.س')
+            Stat::make('صافي الربح (هذا الشهر)', number_format($monthProfit, 2) . ' ج.م')
                 ->description('هامش الربح: ' . number_format($profitMargin, 2) . '%')
                 ->descriptionIcon('heroicon-m-banknotes')
                 ->color($profitMargin > 0 ? 'success' : 'danger'),
 
-            Stat::make('متوسط قيمة الطلب', number_format($avgOrderValue, 2) . ' ر.س')
+            Stat::make('متوسط قيمة الطلب', number_format($avgOrderValue, 2) . ' ج.م')
                 ->description('هذا الشهر')
                 ->descriptionIcon('heroicon-m-shopping-cart')
                 ->color('warning'),
 
             Stat::make('الطلبات المعلقة', $pendingOrders . ' طلب')
-                ->description('قيمة: ' . number_format($pendingRevenue, 2) . ' ر.س')
+                ->description('قيمة: ' . number_format($pendingRevenue, 2) . ' ج.م')
                 ->descriptionIcon('heroicon-m-clock')
                 ->color('warning'),
 
             Stat::make('الطلبات المدفوعة', $paidOrders . ' طلب')
-                ->description('قيمة: ' . number_format($paidRevenue, 2) . ' ر.س')
+                ->description('قيمة: ' . number_format($paidRevenue, 2) . ' ج.م')
                 ->descriptionIcon('heroicon-m-check-circle')
                 ->color('success'),
         ];

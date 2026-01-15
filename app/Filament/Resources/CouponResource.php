@@ -50,12 +50,12 @@ class CouponResource extends Resource
                         Forms\Components\TextInput::make('minimum_purchase')
                             ->label('الحد الأدنى للشراء')
                             ->numeric()
-                            ->prefix('ر.س')
+                            ->prefix('ج.م')
                             ->step(0.01),
                         Forms\Components\TextInput::make('maximum_discount')
                             ->label('الحد الأقصى للخصم')
                             ->numeric()
-                            ->prefix('ر.س')
+                            ->prefix('ج.م')
                             ->step(0.01),
                         Forms\Components\TextInput::make('usage_limit')
                             ->label('حد الاستخدام')
@@ -117,7 +117,7 @@ class CouponResource extends Resource
                     ->badge(),
                 Tables\Columns\TextColumn::make('value')
                     ->label('القيمة')
-                    ->formatStateUsing(fn ($record) => $record->type === CouponType::PERCENTAGE ? $record->value . '%' : $record->value . ' ر.س'),
+                    ->formatStateUsing(fn ($record) => $record->type === CouponType::PERCENTAGE ? $record->value . '%' : $record->value . ' ج.م'),
                 Tables\Columns\TextColumn::make('used_count')
                     ->label('عدد الاستخدامات')
                     ->sortable(),

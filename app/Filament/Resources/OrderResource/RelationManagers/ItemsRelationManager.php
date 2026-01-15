@@ -66,7 +66,7 @@ class ItemsRelationManager extends RelationManager
                     ->label('السعر')
                     ->numeric()
                     ->required()
-                    ->prefix('ر.س')
+                    ->prefix('ج.م')
                     ->step(0.01)
                     ->reactive()
                     ->afterStateUpdated(function ($state, Forms\Set $set, $get) {
@@ -77,7 +77,7 @@ class ItemsRelationManager extends RelationManager
                     ->label('الإجمالي')
                     ->numeric()
                     ->required()
-                    ->prefix('ر.س')
+                    ->prefix('ج.م')
                     ->step(0.01)
                     ->disabled()
                     ->dehydrated(),
@@ -101,16 +101,16 @@ class ItemsRelationManager extends RelationManager
                     ->sortable(),
                 Tables\Columns\TextColumn::make('price')
                     ->label('السعر')
-                    ->money('SAR')
+                    ->money('EGP')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('total')
                     ->label('الإجمالي')
-                    ->money('SAR')
+                    ->money('EGP')
                     ->sortable()
                     ->summarize([
                         Tables\Columns\Summarizers\Sum::make()
                             ->label('المجموع الكلي')
-                            ->money('SAR'),
+                            ->money('EGP'),
                     ]),
             ])
             ->filters([

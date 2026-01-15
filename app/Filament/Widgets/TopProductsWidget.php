@@ -39,7 +39,7 @@ class TopProductsWidget extends BaseWidget
                 ->sortable(),
             Tables\Columns\TextColumn::make('price')
                 ->label('السعر')
-                ->money('SAR')
+                ->money('EGP')
                 ->sortable(),
             Tables\Columns\TextColumn::make('stock_quantity')
                 ->label('المخزون')

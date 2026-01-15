@@ -70,17 +70,17 @@ class ProductResource extends Resource
                             ->label('السعر بعد الخصم')
                             ->required()
                             ->numeric()
-                            ->prefix('ر.س')
+                            ->prefix('ج.م')
                             ->step(0.01),
                         Forms\Components\TextInput::make('compare_price')
                             ->label('السعر الأصلي')
                             ->numeric()
-                            ->prefix('ر.س')
+                            ->prefix('ج.م')
                             ->step(0.01),
                         Forms\Components\TextInput::make('cost_price')
                             ->label('سعر التكلفة')
                             ->numeric()
-                            ->prefix('ر.س')
+                            ->prefix('ج.م')
                             ->step(0.01),
                         Forms\Components\TextInput::make('stock_quantity')
                             ->label('الكمية المتوفرة')
@@ -146,7 +146,7 @@ class ProductResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('price')
                     ->label('السعر')
-                    ->money('SAR')
+                    ->money('EGP')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('stock_quantity')
                     ->label('المخزون')

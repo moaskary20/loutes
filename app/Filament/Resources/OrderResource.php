@@ -123,7 +123,7 @@ class OrderResource extends Resource
                                     ->label('السعر')
                                     ->numeric()
                                     ->required()
-                                    ->prefix('ر.س')
+                                    ->prefix('ج.م')
                                     ->step(0.01)
                                     ->reactive()
                                     ->afterStateUpdated(function ($state, Forms\Set $set, $get) {
@@ -133,7 +133,7 @@ class OrderResource extends Resource
                                 Forms\Components\TextInput::make('total')
                                     ->label('الإجمالي')
                                     ->numeric()
-                                    ->prefix('ر.س')
+                                    ->prefix('ج.م')
                                     ->disabled()
                                     ->dehydrated(),
                             ])
@@ -169,7 +169,7 @@ class OrderResource extends Resource
                         Forms\Components\TextInput::make('subtotal')
                             ->label('المجموع الفرعي')
                             ->numeric()
-                            ->prefix('ر.س')
+                            ->prefix('ج.م')
                             ->required()
                             ->disabled()
                             ->dehydrated()
@@ -177,7 +177,7 @@ class OrderResource extends Resource
                         Forms\Components\TextInput::make('tax_amount')
                             ->label('الضريبة')
                             ->numeric()
-                            ->prefix('ر.س')
+                            ->prefix('ج.م')
                             ->default(0)
                             ->reactive()
                             ->afterStateUpdated(function (Forms\Set $set, Forms\Get $get) {
@@ -190,7 +190,7 @@ class OrderResource extends Resource
                         Forms\Components\TextInput::make('shipping_cost')
                             ->label('تكلفة الشحن')
                             ->numeric()
-                            ->prefix('ر.س')
+                            ->prefix('ج.م')
                             ->default(0)
                             ->reactive()
                             ->afterStateUpdated(function (Forms\Set $set, Forms\Get $get) {
@@ -203,7 +203,7 @@ class OrderResource extends Resource
                         Forms\Components\TextInput::make('discount_amount')
                             ->label('مبلغ الخصم')
                             ->numeric()
-                            ->prefix('ر.س')
+                            ->prefix('ج.م')
                             ->default(0)
                             ->reactive()
                             ->afterStateUpdated(function (Forms\Set $set, Forms\Get $get) {
@@ -216,7 +216,7 @@ class OrderResource extends Resource
                         Forms\Components\TextInput::make('total')
                             ->label('الإجمالي')
                             ->numeric()
-                            ->prefix('ر.س')
+                            ->prefix('ج.م')
                             ->required()
                             ->disabled()
                             ->dehydrated()
@@ -267,7 +267,7 @@ class OrderResource extends Resource
                     ->color(fn ($record) => $record->payment_status->color()),
                 Tables\Columns\TextColumn::make('total')
                     ->label('الإجمالي')
-                    ->money('SAR')
+                    ->money('EGP')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('items_count')
                     ->label('عدد العناصر')

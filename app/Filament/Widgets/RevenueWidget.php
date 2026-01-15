@@ -15,15 +15,15 @@ class RevenueWidget extends BaseWidget
         $totalRevenue = Order::sum('total');
 
         return [
-            Stat::make('إيرادات اليوم', number_format($todayRevenue, 2) . ' ر.س')
+            Stat::make('إيرادات اليوم', number_format($todayRevenue, 2) . ' ج.م')
                 ->description('إيرادات اليوم')
                 ->descriptionIcon('heroicon-m-currency-dollar')
                 ->color('success'),
-            Stat::make('إيرادات الشهر', number_format($monthRevenue, 2) . ' ر.س')
+            Stat::make('إيرادات الشهر', number_format($monthRevenue, 2) . ' ج.م')
                 ->description('إيرادات هذا الشهر')
                 ->descriptionIcon('heroicon-m-calendar')
                 ->color('primary'),
-            Stat::make('إجمالي الإيرادات', number_format($totalRevenue, 2) . ' ر.س')
+            Stat::make('إجمالي الإيرادات', number_format($totalRevenue, 2) . ' ج.م')
                 ->description('جميع الإيرادات')
                 ->descriptionIcon('heroicon-m-chart-bar')
                 ->color('info'),
