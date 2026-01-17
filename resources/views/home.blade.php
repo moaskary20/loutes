@@ -1920,6 +1920,8 @@
 
             .slider-container {
                 margin-top: 0;
+                height: 50vh;
+                min-height: 50vh;
             }
 
             .slide img {
