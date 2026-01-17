@@ -5,6 +5,11 @@
 
     RewriteEngine On
 
+    # Allow direct access to storage files (images, videos, etc.)
+    RewriteCond %{REQUEST_URI} ^/storage/ [NC]
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^storage/(.*)$ storage/$1 [L]
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
@@ -23,3 +28,9 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+
+# Allow access to video files
+<FilesMatch "\.(mp4|webm|ogg)$">
+    Header set Access-Control-Allow-Origin "*"
+    Header set Content-Type "video/mp4"
+</FilesMatch>
