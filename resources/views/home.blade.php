@@ -813,7 +813,7 @@
 
         .category-image-wrapper {
             width: 100%;
-            height: 200px;
+            height: 300px;
             overflow: hidden;
             background: #f5f5f5;
             display: flex;
@@ -903,7 +903,7 @@
             }
 
             .category-image-wrapper {
-                height: 150px;
+                height: 120px;
             }
         }
 
