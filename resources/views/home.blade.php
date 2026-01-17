@@ -787,7 +787,7 @@
 
         .categories-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
         }
 
@@ -2634,7 +2634,7 @@ Our Objectives
     <!-- قسم دعوة للعمل -->
     <section class="cta-section">
         <div class="cta-background">
-            <img src="https://lotussnacks.com/wp-content/uploads/2023/05/footer-img001-1.jpg" alt="Background" class="cta-bg-image">
+            <img src="{{ asset('storage/sliders/back.png') }}" alt="Background" class="cta-bg-image">
             <div class="cta-overlay"></div>
         </div>
         <div class="cta-content">
