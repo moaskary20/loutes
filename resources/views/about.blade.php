@@ -736,6 +736,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            background: #000;
         }
 
         .video-overlay {
@@ -1334,7 +1335,7 @@ Today, the story continues with new chapters driven by passion, quality, and a g
                 <!-- Video 3 -->
                 <div class="video-item" data-video="3">
                     <div class="video-wrapper">
-                        <video preload="metadata" poster="">
+                        <video preload="metadata" controls playsinline>
                             <source src="{{ asset('storage/sliders/video3.mp4') }}" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -1356,7 +1357,7 @@ Today, the story continues with new chapters driven by passion, quality, and a g
                 <!-- Video 2 -->
                 <div class="video-item" data-video="2">
                     <div class="video-wrapper">
-                        <video preload="metadata" poster="">
+                        <video preload="metadata" controls playsinline>
                             <source src="{{ asset('storage/sliders/video2.mp4') }}" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -1378,7 +1379,7 @@ Today, the story continues with new chapters driven by passion, quality, and a g
                 <!-- Video 1 -->
                 <div class="video-item" data-video="1">
                     <div class="video-wrapper">
-                        <video preload="metadata" poster="">
+                        <video preload="metadata" controls playsinline>
                             <source src="{{ asset('storage/sliders/video1.mp4') }}" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -1498,26 +1499,51 @@ Today, the story continues with new chapters driven by passion, quality, and a g
                 const playButton = item.querySelector('.video-play-button');
                 const overlay = item.querySelector('.video-overlay');
                 
-                if (!video || !playButton) return;
+                if (!video) {
+                    console.error('Video element not found');
+                    return;
+                }
 
-                // Play button click
-                playButton.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    video.play();
-                    item.classList.add('playing');
+                // Handle video errors
+                video.addEventListener('error', function(e) {
+                    console.error('Video error:', e);
+                    console.error('Video source:', video.querySelector('source')?.src);
+                    if (overlay) {
+                        overlay.innerHTML = '<div style="color: white; text-align: center; padding: 20px;">Video not available</div>';
+                    }
                 });
+
+                // Handle video load
+                video.addEventListener('loadedmetadata', function() {
+                    console.log('Video loaded:', video.querySelector('source')?.src);
+                });
+
+                if (playButton) {
+                    // Play button click
+                    playButton.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        video.play().catch(function(error) {
+                            console.error('Error playing video:', error);
+                        });
+                        item.classList.add('playing');
+                    });
+                }
 
                 // Pause when video ends
                 video.addEventListener('ended', function() {
                     item.classList.remove('playing');
-                    overlay.style.opacity = '1';
+                    if (overlay) {
+                        overlay.style.opacity = '1';
+                    }
                 });
 
                 // Show overlay when paused
                 video.addEventListener('pause', function() {
                     if (video.currentTime > 0 && !video.ended) {
                         item.classList.remove('playing');
-                        overlay.style.opacity = '1';
+                        if (overlay) {
+                            overlay.style.opacity = '1';
+                        }
                     }
                 });
 
@@ -1539,6 +1565,7 @@ Today, the story continues with new chapters driven by passion, quality, and a g
                             }
                         }
                     });
+                    item.classList.add('playing');
                 });
             });
         });
