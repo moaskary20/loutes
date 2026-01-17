@@ -847,7 +847,7 @@
             }
 
             .category-image-wrapper {
-                height: 120px;
+                height: 175px;
             }
         }
 
@@ -1914,8 +1914,16 @@
                 display: none;
             }
 
+            .header-spacer {
+                height: 120px;
+            }
+
+            .slider-container {
+                margin-top: 0;
+            }
+
             .slide img {
-                padding-top: 210px;
+                padding-top: 0;
             }
 
             .footer-content {
