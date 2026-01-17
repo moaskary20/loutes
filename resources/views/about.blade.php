@@ -1204,7 +1204,6 @@
                             <span></span>
                             <span></span>
                         </button>
-                        <button class="get-quote-btn">Get A Quote</button>
                         <div class="search-icon">
                             <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
@@ -1219,6 +1218,7 @@
                         <a href="{{ route('contact') }}" class="nav-link">Contact Us</a>
                     </div>
                     <div class="nav-right">
+                        <button class="get-quote-btn">Get A Quote</button>
                         <a href="{{ route('cart.index') }}" class="cart-icon-wrapper" title="Shopping Cart">
                             <div class="cart-icon">
                                 <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
