@@ -2654,7 +2654,6 @@
                                                     @if($product->category)
                                                         <p class="product-card-subtitle">{{ strtoupper($product->category->name_en ?? $product->category->name) }}</p>
                                                     @endif
-                                                    <div class="product-card-price">{{ number_format($product->price, 2) }} EGP</div>
                                                 </div>
                                             </div>
                                         </a>
