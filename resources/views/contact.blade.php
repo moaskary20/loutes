@@ -685,7 +685,7 @@
         }
 
         .contact-form-submit {
-            background: #cead42;
+            background: #044898;
             color: white;
             padding: 15px 40px;
             border: none;
@@ -698,7 +698,7 @@
         }
 
         .contact-form-submit:hover {
-            background: #033a7a;
+            background: #0666c4;
             transform: translateY(-2px);
         }
 
@@ -1283,8 +1283,7 @@
                 <div class="contact-card-content">
                     <h3 class="contact-card-title">Visit our HQ</h3>
                     <div class="contact-card-info">
-                        28 Al-Central St. - Kafr Hakeem-<br>
-                        Giza - Egypt
+                        Sara El-Bitash Building, branching off from Hussein Qabdaya Street, El-Bitash, Dekheila, Agami
                     </div>
                 </div>
             </div>
