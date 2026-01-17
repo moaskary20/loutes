@@ -1066,7 +1066,6 @@
                                 <h3 class="related-product-title">
                                     <a href="{{ route('product.show', $relatedProduct) }}">{{ $relatedProduct->name }}</a>
                                 </h3>
-                                <div class="related-product-price">{{ number_format($relatedProduct->price, 2) }} EGP</div>
                             </div>
                         </a>
                     </div>
