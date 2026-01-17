@@ -472,7 +472,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(206, 173, 66, 0.4);
+            background: rgba(4, 72, 152, 0.4);
             z-index: 2;
         }
 
