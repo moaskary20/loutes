@@ -810,7 +810,7 @@
 
         .category-image-wrapper {
             width: 100%;
-            height: 300px;
+            height: 450px;
             overflow: hidden;
             background: #f5f5f5;
             display: flex;
