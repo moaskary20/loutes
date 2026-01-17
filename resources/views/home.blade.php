@@ -44,7 +44,7 @@
 
         /* Top Bar */
         .top-bar {
-            background: rgba(206, 173, 66, 0.95);
+            background: rgba(4, 72, 152, 0.95);
             backdrop-filter: blur(10px);
             color: white;
             padding: 8px 15px;
@@ -222,7 +222,7 @@
             align-items: center;
             padding: 20px;
             border-bottom: 1px solid #f0f0f0;
-            background: #cead42;
+            background: #044898;
         }
 
         .mobile-menu-logo {
@@ -266,7 +266,7 @@
         }
 
         .get-quote-btn {
-            background: #cead42;
+            background: #044898;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -278,7 +278,7 @@
         }
 
         .get-quote-btn:hover {
-            background: #b89a35;
+            background: #033a7a;
             transform: translateY(-2px);
         }
 
@@ -400,7 +400,7 @@
         .logo-icon {
             width: 50px;
             height: 50px;
-            background: #cead42;
+            background: #044898;
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -779,22 +779,19 @@
             margin-bottom: 40px;
         }
 
-        .categories-carousel-wrapper {
+        .categories-grid-wrapper {
             position: relative;
-            overflow: hidden;
-            padding: 0 60px;
+            overflow: visible;
+            padding: 0;
         }
 
-        .categories-carousel {
-            display: flex;
-            transition: transform 0.5s ease;
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
-            will-change: transform;
         }
 
         .category-item {
-            flex: 0 0 calc(25% - 15px);
-            min-width: 0;
             background: white;
             border-radius: 15px;
             overflow: hidden;
@@ -840,62 +837,9 @@
             color: #333;
         }
 
-        .category-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 10;
-            background: white;
-            border: 2px solid #cead42;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .category-nav:hover {
-            background: #cead42;
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .category-nav:hover svg {
-            stroke: white;
-        }
-
-        .category-nav.prev {
-            left: 0;
-        }
-
-        .category-nav.next {
-            right: 0;
-        }
-
-        .category-nav svg {
-            width: 24px;
-            height: 24px;
-            stroke: #cead42;
-            stroke-width: 2;
-            transition: stroke 0.3s;
-        }
-
-        .category-nav.disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            pointer-events: none;
-        }
-
         @media (max-width: 968px) {
-            .categories-carousel-wrapper {
-                padding: 0 50px;
-            }
-
-            .category-item {
-                flex: 0 0 calc(50% - 10px);
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .categories-heading {
@@ -951,7 +895,7 @@
         /* قسم المنتجات */
         .products-section {
             position: relative;
-            background: #E8C95B;
+            background: #044898;
             padding: 100px 20px 80px;
             overflow: hidden;
         }
@@ -1752,13 +1696,13 @@
             align-items: center;
             gap: 10px;
             padding: 18px 35px;
-            background: linear-gradient(135deg, #E8C95B 0%, #F5D87A 100%);
+            background: linear-gradient(135deg, #044898 0%, #0666c4 100%);
             color: white;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
             border-radius: 8px;
-            border: 2px solid rgba(206, 173, 66, 0.8);
+            border: 2px solid rgba(4, 72, 152, 0.8);
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             transition: all 0.3s ease;
             white-space: nowrap;
@@ -1767,7 +1711,7 @@
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-            background: linear-gradient(135deg, #F5D87A 0%, #E8C95B 100%);
+            background: linear-gradient(135deg, #0666c4 0%, #044898 100%);
         }
 
         .cta-button svg {
@@ -2163,13 +2107,8 @@
     <section class="categories-section">
         <div class="categories-container">
             <h2 class="categories-heading">Our Categories</h2>
-            <div class="categories-carousel-wrapper">
-                <div class="category-nav prev" id="categoryPrev" onclick="moveCategories(-1)">
-                    <svg fill="none" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                    </svg>
-                </div>
-                <div class="categories-carousel" id="categoriesCarousel">
+            <div class="categories-grid-wrapper">
+                <div class="categories-grid">
                     @foreach($categories as $category)
                         <a href="{{ route('products', ['categories' => [$category->id]]) }}" class="category-item">
                             <div class="category-image-wrapper">
@@ -2186,11 +2125,6 @@
                             </div>
                         </a>
                     @endforeach
-                </div>
-                <div class="category-nav next" id="categoryNext" onclick="moveCategories(1)">
-                    <svg fill="none" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                    </svg>
                 </div>
             </div>
         </div>
@@ -2360,7 +2294,7 @@
                 ctx.lineTo(0, height);
                 ctx.lineTo(0, 0);
                 ctx.closePath();
-                ctx.fillStyle = '#E8C95B';
+                ctx.fillStyle = '#044898';
                 ctx.fill();
 
                 // موجة ثانية (أخف) - تبدأ من الأعلى
@@ -2377,7 +2311,7 @@
                 ctx.lineTo(0, height);
                 ctx.lineTo(0, 0);
                 ctx.closePath();
-                ctx.fillStyle = 'rgba(232, 201, 91, 0.7)';
+                ctx.fillStyle = 'rgba(4, 72, 152, 0.7)';
                 ctx.fill();
 
                 time += 0.5;
@@ -2464,122 +2398,6 @@
             document.addEventListener('DOMContentLoaded', drawSliderWave);
         } else {
             drawSliderWave();
-        }
-
-        // كود تمرير الفئات
-        let categoryScrollPosition = 0;
-        const categoriesCarousel = document.getElementById('categoriesCarousel');
-        const categoryItems = document.querySelectorAll('.category-item');
-        const categoryPrev = document.getElementById('categoryPrev');
-        const categoryNext = document.getElementById('categoryNext');
-
-        function updateCategoryNavButtons() {
-            if (!categoriesCarousel || !categoryPrev || !categoryNext) return;
-
-            const isMobile = window.innerWidth <= 968;
-            const itemsPerView = isMobile ? 2 : 4;
-            const totalItems = categoryItems.length;
-            const maxScroll = totalItems - itemsPerView;
-
-            // إخفاء الأزرار إذا لم يكن هناك حاجة للتمرير
-            if (totalItems <= itemsPerView) {
-                categoryPrev.style.display = 'none';
-                categoryNext.style.display = 'none';
-                return;
-            }
-
-            categoryPrev.style.display = 'flex';
-            categoryNext.style.display = 'flex';
-
-            // تحديث حالة الأزرار
-            if (categoryScrollPosition <= 0) {
-                categoryPrev.classList.add('disabled');
-            } else {
-                categoryPrev.classList.remove('disabled');
-            }
-
-            if (categoryScrollPosition >= maxScroll) {
-                categoryNext.classList.add('disabled');
-            } else {
-                categoryNext.classList.remove('disabled');
-            }
-        }
-
-        function moveCategories(direction) {
-            if (!categoriesCarousel || categoryItems.length === 0) return;
-
-            const isMobile = window.innerWidth <= 968;
-            const itemsPerView = isMobile ? 2 : 4;
-            const totalItems = categoryItems.length;
-            const maxScroll = Math.max(0, totalItems - itemsPerView);
-
-            if (direction === -1 && categoryScrollPosition > 0) {
-                categoryScrollPosition--;
-            } else if (direction === 1 && categoryScrollPosition < maxScroll) {
-                categoryScrollPosition++;
-            }
-
-            // حساب المسافة للتمرير
-            const firstItem = categoryItems[0];
-            if (firstItem) {
-                const itemWidth = firstItem.offsetWidth;
-                const gap = 20; // gap between items
-                const scrollAmount = categoryScrollPosition * (itemWidth + gap);
-
-                categoriesCarousel.style.transform = `translateX(-${scrollAmount}px)`;
-            }
-
-            updateCategoryNavButtons();
-        }
-
-        // تحديث عند تغيير حجم النافذة
-        let resizeTimeout;
-        window.addEventListener('resize', function() {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(function() {
-                categoryScrollPosition = 0;
-                if (categoriesCarousel) {
-                    categoriesCarousel.style.transform = 'translateX(0)';
-                }
-                updateCategoryNavButtons();
-            }, 250);
-        });
-
-        // تهيئة عند تحميل الصفحة
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', updateCategoryNavButtons);
-        } else {
-            updateCategoryNavButtons();
-        }
-
-        // دعم السحب (Swipe) على الموبايل
-        if (categoriesCarousel) {
-            let touchStartX = 0;
-            let touchEndX = 0;
-
-            categoriesCarousel.addEventListener('touchstart', function(e) {
-                touchStartX = e.changedTouches[0].screenX;
-            }, { passive: true });
-
-            categoriesCarousel.addEventListener('touchend', function(e) {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-            }, { passive: true });
-
-            function handleSwipe() {
-                const swipeThreshold = 50;
-                const diff = touchStartX - touchEndX;
-
-                if (Math.abs(diff) > swipeThreshold) {
-                    if (diff > 0) {
-                        // سحب لليسار - التحرك للأمام
-                        moveCategories(1);
-                    } else {
-                        // سحب لليمين - التحرك للخلف
-                        moveCategories(-1);
-                    }
-                }
-            }
         }
 
         // تفعيل زر التشغيل في الفيديو
