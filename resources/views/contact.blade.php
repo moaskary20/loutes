@@ -45,7 +45,7 @@
 
         /* Top Bar */
         .top-bar {
-            background: rgba(206, 173, 66, 0.95);
+            background: rgba(4, 72, 152, 0.95);
             backdrop-filter: blur(10px);
             color: white;
             padding: 8px 15px;
@@ -296,7 +296,7 @@
         }
 
         .search-icon:hover {
-            color: #cead42;
+            color: #044898;
         }
 
         .nav-center {
@@ -323,7 +323,7 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: #cead42;
+            background: #044898;
             transform: scaleX(0);
             transition: transform 0.3s;
         }
@@ -333,7 +333,7 @@
         }
 
         .nav-link:hover {
-            color: #cead42;
+            color: #044898;
         }
 
         .nav-right {
@@ -367,7 +367,7 @@
         }
 
         .cart-icon-wrapper:hover .cart-icon {
-            color: #cead42;
+            color: #044898;
         }
 
         .cart-badge {
@@ -419,7 +419,7 @@
         .logo-text-ar {
             font-size: 20px;
             font-weight: bold;
-            color: #cead42;
+            color: #044898;
             line-height: 1;
         }
 
