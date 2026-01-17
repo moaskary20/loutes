@@ -19,8 +19,12 @@ class HomeController extends Controller
             ->with('images')
             ->limit(8)
             ->get();
+        $categories = Category::where('is_active', true)
+            ->whereNull('parent_id')
+            ->orderBy('sort_order')
+            ->get();
         
-        return view('home', compact('sliders', 'siteSettings', 'products'));
+        return view('home', compact('sliders', 'siteSettings', 'products', 'categories'));
     }
 
     public function contact()

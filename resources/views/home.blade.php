@@ -757,6 +757,156 @@
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
 
+        /* قسم الفئات */
+        .categories-section {
+            background: #f5f5f5;
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .categories-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .categories-heading {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #cead42;
+            margin-bottom: 40px;
+        }
+
+        .categories-carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+            padding: 0 60px;
+        }
+
+        .categories-carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+            gap: 20px;
+            will-change: transform;
+        }
+
+        .category-item {
+            flex: 0 0 calc(25% - 15px);
+            min-width: 0;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .category-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-image-wrapper {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .category-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .category-item:hover .category-image-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .category-name {
+            padding: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .category-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            background: white;
+            border: 2px solid #cead42;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-nav:hover {
+            background: #cead42;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .category-nav:hover svg {
+            stroke: white;
+        }
+
+        .category-nav.prev {
+            left: 0;
+        }
+
+        .category-nav.next {
+            right: 0;
+        }
+
+        .category-nav svg {
+            width: 24px;
+            height: 24px;
+            stroke: #cead42;
+            stroke-width: 2;
+            transition: stroke 0.3s;
+        }
+
+        .category-nav.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        @media (max-width: 968px) {
+            .categories-carousel-wrapper {
+                padding: 0 50px;
+            }
+
+            .category-item {
+                flex: 0 0 calc(50% - 10px);
+            }
+
+            .categories-heading {
+                font-size: 2rem;
+            }
+
+            .category-image-wrapper {
+                height: 150px;
+            }
+        }
+
         /* قسم About Us */
         .about-section {
             background: #f5f5f5;
@@ -2008,6 +2158,45 @@
         <canvas id="sliderWaveCanvas" class="slider-wave-canvas"></canvas>
     </div>
 
+    <!-- قسم الفئات -->
+    @if($categories->count() > 0)
+    <section class="categories-section">
+        <div class="categories-container">
+            <h2 class="categories-heading">Our Categories</h2>
+            <div class="categories-carousel-wrapper">
+                <div class="category-nav prev" id="categoryPrev" onclick="moveCategories(-1)">
+                    <svg fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </div>
+                <div class="categories-carousel" id="categoriesCarousel">
+                    @foreach($categories as $category)
+                        <a href="{{ route('products', ['categories' => [$category->id]]) }}" class="category-item">
+                            <div class="category-image-wrapper">
+                                @if($category->image)
+                                    <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->name_en ?? $category->name }}">
+                                @else
+                                    <svg width="80" height="80" fill="#cead42" viewBox="0 0 24 24">
+                                        <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                    </svg>
+                                @endif
+                            </div>
+                            <div class="category-name">
+                                {{ $category->name_en ?? $category->name }}
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
+                <div class="category-nav next" id="categoryNext" onclick="moveCategories(1)">
+                    <svg fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+    @endif
+
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
@@ -2275,6 +2464,122 @@
             document.addEventListener('DOMContentLoaded', drawSliderWave);
         } else {
             drawSliderWave();
+        }
+
+        // كود تمرير الفئات
+        let categoryScrollPosition = 0;
+        const categoriesCarousel = document.getElementById('categoriesCarousel');
+        const categoryItems = document.querySelectorAll('.category-item');
+        const categoryPrev = document.getElementById('categoryPrev');
+        const categoryNext = document.getElementById('categoryNext');
+
+        function updateCategoryNavButtons() {
+            if (!categoriesCarousel || !categoryPrev || !categoryNext) return;
+
+            const isMobile = window.innerWidth <= 968;
+            const itemsPerView = isMobile ? 2 : 4;
+            const totalItems = categoryItems.length;
+            const maxScroll = totalItems - itemsPerView;
+
+            // إخفاء الأزرار إذا لم يكن هناك حاجة للتمرير
+            if (totalItems <= itemsPerView) {
+                categoryPrev.style.display = 'none';
+                categoryNext.style.display = 'none';
+                return;
+            }
+
+            categoryPrev.style.display = 'flex';
+            categoryNext.style.display = 'flex';
+
+            // تحديث حالة الأزرار
+            if (categoryScrollPosition <= 0) {
+                categoryPrev.classList.add('disabled');
+            } else {
+                categoryPrev.classList.remove('disabled');
+            }
+
+            if (categoryScrollPosition >= maxScroll) {
+                categoryNext.classList.add('disabled');
+            } else {
+                categoryNext.classList.remove('disabled');
+            }
+        }
+
+        function moveCategories(direction) {
+            if (!categoriesCarousel || categoryItems.length === 0) return;
+
+            const isMobile = window.innerWidth <= 968;
+            const itemsPerView = isMobile ? 2 : 4;
+            const totalItems = categoryItems.length;
+            const maxScroll = Math.max(0, totalItems - itemsPerView);
+
+            if (direction === -1 && categoryScrollPosition > 0) {
+                categoryScrollPosition--;
+            } else if (direction === 1 && categoryScrollPosition < maxScroll) {
+                categoryScrollPosition++;
+            }
+
+            // حساب المسافة للتمرير
+            const firstItem = categoryItems[0];
+            if (firstItem) {
+                const itemWidth = firstItem.offsetWidth;
+                const gap = 20; // gap between items
+                const scrollAmount = categoryScrollPosition * (itemWidth + gap);
+
+                categoriesCarousel.style.transform = `translateX(-${scrollAmount}px)`;
+            }
+
+            updateCategoryNavButtons();
+        }
+
+        // تحديث عند تغيير حجم النافذة
+        let resizeTimeout;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(function() {
+                categoryScrollPosition = 0;
+                if (categoriesCarousel) {
+                    categoriesCarousel.style.transform = 'translateX(0)';
+                }
+                updateCategoryNavButtons();
+            }, 250);
+        });
+
+        // تهيئة عند تحميل الصفحة
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', updateCategoryNavButtons);
+        } else {
+            updateCategoryNavButtons();
+        }
+
+        // دعم السحب (Swipe) على الموبايل
+        if (categoriesCarousel) {
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            categoriesCarousel.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            categoriesCarousel.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, { passive: true });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        // سحب لليسار - التحرك للأمام
+                        moveCategories(1);
+                    } else {
+                        // سحب لليمين - التحرك للخلف
+                        moveCategories(-1);
+                    }
+                }
+            }
         }
 
         // تفعيل زر التشغيل في الفيديو
