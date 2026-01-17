@@ -487,7 +487,7 @@
         .slide img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
             object-position: center;
         }
 
@@ -2094,7 +2094,7 @@
     <!-- Spacer للـ Header الثابت -->
     <div class="header-spacer"></div>
 
-    <div class="slider-container" style="@if($siteSettings->use_background_image && $siteSettings->background_image)background-image: url('{{ asset('storage/' . $siteSettings->background_image) }}'); background-size: cover; background-position: center; background-repeat: no-repeat;@else background: linear-gradient(180deg, {{ $siteSettings->background_color }} 0%, {{ $siteSettings->background_color }}dd 50%, {{ $siteSettings->background_color }}cc 100%);@endif">
+    <div class="slider-container">
         <div class="slider-wrapper" id="sliderWrapper">
             @forelse($sliders as $index => $slider)
                 <div class="slide {{ $index === 0 ? 'active' : '' }}" data-slide="{{ $index }}">
