@@ -913,20 +913,22 @@
             align-items: center;
             gap: 10px;
             padding: 18px 35px;
-            background: linear-gradient(135deg, #E8C95B 0%, #F5D87A 100%);
+            background: linear-gradient(135deg, #044898 0%, #0666c4 100%);
             color: white;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
             border-radius: 8px;
-            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            border: 2px solid rgba(4, 72, 152, 0.8);
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-            background: linear-gradient(135deg, #F5D87A 0%, #E8C95B 100%);
+            background: linear-gradient(135deg, #0666c4 0%, #044898 100%);
         }
 
         .cta-button svg {
@@ -1358,7 +1360,7 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="cta-background">
-            <img src="https://lotussnacks.com/wp-content/uploads/2023/05/footer-img001-1.jpg" alt="Background" class="cta-bg-image">
+            <img src="{{ asset('storage/sliders/back.png') }}" alt="Background" class="cta-bg-image">
             <div class="cta-overlay"></div>
         </div>
         <div class="cta-content">
