@@ -45,7 +45,7 @@
         }
 
         .top-bar {
-            background: rgba(206, 173, 66, 0.95);
+            background: rgba(4, 72, 152, 0.95);
             backdrop-filter: blur(10px);
             color: white;
             padding: 8px 15px;
@@ -110,7 +110,7 @@
         }
 
         .get-quote-btn {
-            background: #cead42;
+            background: #044898;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -122,7 +122,7 @@
         }
 
         .get-quote-btn:hover {
-            background: #b89a35;
+            background: #033a7a;
             transform: translateY(-2px);
         }
 
@@ -139,7 +139,7 @@
         }
 
         .search-icon:hover {
-            color: #cead42;
+            color: #044898;
         }
 
         .nav-center {
@@ -166,6 +166,6 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: #cead42;
+            background: #044898;
             transform: scaleX(0);
        

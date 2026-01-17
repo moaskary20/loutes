@@ -223,7 +223,7 @@
             align-items: center;
             padding: 20px;
             border-bottom: 1px solid #f0f0f0;
-            background: #cead42;
+            background: #044898;
         }
 
         .mobile-menu-logo {
@@ -267,7 +267,7 @@
         }
 
         .get-quote-btn {
-            background: #cead42;
+            background: #044898;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -279,7 +279,7 @@
         }
 
         .get-quote-btn:hover {
-            background: #b89a35;
+            background: #033a7a;
             transform: translateY(-2px);
         }
 
@@ -401,7 +401,7 @@
         .logo-icon {
             width: 50px;
             height: 50px;
-            background: #cead42;
+            background: #044898;
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -698,7 +698,7 @@
         }
 
         .contact-form-submit:hover {
-            background: #b89a35;
+            background: #033a7a;
             transform: translateY(-2px);
         }
 
@@ -1106,7 +1106,7 @@
         }
 
         .footer-social-facebook:hover {
-            background: #b89a38;
+            background: #033a7a;
         }
 
         .footer-social-instagram:hover {

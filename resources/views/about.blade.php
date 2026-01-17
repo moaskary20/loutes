@@ -45,7 +45,7 @@
 
         /* Top Bar */
         .top-bar {
-            background: rgba(206, 173, 66, 0.95);
+            background: rgba(4, 72, 152, 0.95);
             backdrop-filter: blur(10px);
             color: white;
             padding: 10px 20px;
@@ -178,7 +178,7 @@
             align-items: center;
             padding: 20px;
             border-bottom: 1px solid #f0f0f0;
-            background: #cead42;
+            background: #044898;
         }
 
         .mobile-menu-logo {
@@ -222,7 +222,7 @@
         }
 
         .get-quote-btn {
-            background: #cead42;
+            background: #044898;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -233,7 +233,7 @@
         }
 
         .get-quote-btn:hover {
-            background: #b89a35;
+            background: #033a7a;
         }
 
         .search-icon {
@@ -351,7 +351,7 @@
         .logo-icon {
             width: 40px;
             height: 40px;
-            background: #cead42;
+            background: #044898;
             color: white;
             border-radius: 50%;
             display: flex;
@@ -1116,7 +1116,7 @@
         }
 
         .footer-social-facebook:hover {
-            background: #b89a38;
+            background: #033a7a;
         }
 
         .footer-social-instagram:hover {

@@ -45,7 +45,7 @@
         }
 
         .top-bar {
-            background: rgba(206, 173, 66, 0.95);
+            background: rgba(4, 72, 152, 0.95);
             backdrop-filter: blur(10px);
             color: white;
             padding: 8px 15px;
@@ -187,7 +187,7 @@
             align-items: center;
             padding: 20px;
             border-bottom: 1px solid #f0f0f0;
-            background: #cead42;
+            background: #044898;
         }
 
         .mobile-menu-logo {
@@ -231,7 +231,7 @@
         }
 
         .get-quote-btn {
-            background: #cead42;
+            background: #044898;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -243,7 +243,7 @@
         }
 
         .get-quote-btn:hover {
-            background: #b89a35;
+            background: #033a7a;
             transform: translateY(-2px);
         }
 
@@ -365,7 +365,7 @@
         .logo-icon {
             width: 50px;
             height: 50px;
-            background: #cead42;
+            background: #044898;
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -574,7 +574,7 @@
         }
 
         .filter-submit:hover {
-            background: #b89a35;
+            background: #033a7a;
         }
 
         .filter-reset {
@@ -703,7 +703,7 @@
         }
 
         .product-card-add-to-cart:hover {
-            background: #b89a35;
+            background: #033a7a;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(206, 173, 66, 0.3);
         }

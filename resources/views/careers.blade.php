@@ -44,7 +44,7 @@
         }
 
         .top-bar {
-            background: rgba(206, 173, 66, 0.95);
+            background: rgba(4, 72, 152, 0.95);
             color: white;
             padding: 8px 15px;
             font-size: 14px;
@@ -185,7 +185,7 @@
             align-items: center;
             padding: 20px;
             border-bottom: 1px solid #f0f0f0;
-            background: #cead42;
+            background: #044898;
         }
 
         .mobile-menu-logo {
@@ -224,12 +224,12 @@
 
         .mobile-menu-link:hover {
             background: #f8f8f8;
-            color: #cead42;
+            color: #044898;
             padding-left: 25px;
         }
 
         .get-quote-btn {
-            background: #cead42;
+            background: #044898;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -241,7 +241,7 @@
         }
 
         .get-quote-btn:hover {
-            background: #b89a35;
+            background: #033a7a;
             transform: translateY(-2px);
         }
 
@@ -258,7 +258,7 @@
         }
 
         .search-icon:hover {
-            color: #cead42;
+            color: #044898;
         }
 
         .nav-center {
@@ -285,7 +285,7 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: #cead42;
+            background: #044898;
             transform: scaleX(0);
             transition: transform 0.3s;
         }
@@ -295,7 +295,7 @@
         }
 
         .nav-link:hover {
-            color: #cead42;
+            color: #044898;
         }
 
         .nav-right {
@@ -329,7 +329,7 @@
         }
 
         .cart-icon-wrapper:hover .cart-icon {
-            color: #cead42;
+            color: #044898;
         }
 
         .cart-badge {
@@ -363,7 +363,7 @@
         .logo-icon {
             width: 50px;
             height: 50px;
-            background: #cead42;
+            background: #044898;
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -381,7 +381,7 @@
         .logo-text-ar {
             font-size: 20px;
             font-weight: bold;
-            color: #cead42;
+            color: #044898;
             line-height: 1;
         }
 
@@ -496,7 +496,7 @@
 
         .careers-text-block li::before {
             content: '•';
-            color: #cead42;
+            color: #044898;
             font-weight: bold;
             display: inline-block;
             width: 1em;
@@ -561,7 +561,7 @@
         .careers-select:focus,
         .careers-textarea:focus {
             outline: none;
-            border-color: #cead42;
+            border-color: #044898;
             box-shadow: 0 0 0 2px rgba(206, 173, 66, 0.25);
         }
 
@@ -580,7 +580,7 @@
             padding: 10px 24px;
             border-radius: 6px;
             border: none;
-            background: #cead42;
+            background: #044898;
             color: #fff;
             font-weight: 600;
             font-size: 0.95rem;
@@ -590,7 +590,7 @@
         }
 
         .careers-submit-btn:hover {
-            background: #b89a35;
+            background: #033a7a;
             transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.18);
         }

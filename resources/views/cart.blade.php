@@ -45,7 +45,7 @@
         }
 
         .top-bar {
-            background: rgba(206, 173, 66, 0.95);
+            background: rgba(4, 72, 152, 0.95);
             backdrop-filter: blur(10px);
             color: white;
             padding: 8px 15px;
@@ -187,7 +187,7 @@
             align-items: center;
             padding: 20px;
             border-bottom: 1px solid #f0f0f0;
-            background: #cead42;
+            background: #044898;
         }
 
         .mobile-menu-logo {
@@ -226,12 +226,12 @@
 
         .mobile-menu-link:hover {
             background: #f8f8f8;
-            color: #cead42;
+            color: #044898;
             padding-left: 25px;
         }
 
         .get-quote-btn {
-            background: #cead42;
+            background: #044898;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -243,7 +243,7 @@
         }
 
         .get-quote-btn:hover {
-            background: #b89a35;
+            background: #033a7a;
             transform: translateY(-2px);
         }
 
@@ -260,7 +260,7 @@
         }
 
         .search-icon:hover {
-            color: #cead42;
+            color: #044898;
         }
 
         .nav-center {
@@ -287,13 +287,13 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: #cead42;
+            background: #044898;
             transform: scaleX(0);
             transition: transform 0.3s;
         }
 
         .nav-link:hover {
-            color: #cead42;
+            color: #044898;
         }
 
         .nav-link:hover::after {
@@ -331,7 +331,7 @@
         }
 
         .cart-icon-wrapper:hover .cart-icon {
-            color: #cead42;
+            color: #044898;
         }
 
         .cart-badge {
@@ -365,7 +365,7 @@
         .logo-icon {
             width: 50px;
             height: 50px;
-            background: #cead42;
+            background: #044898;
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -383,7 +383,7 @@
         .logo-text-ar {
             font-size: 20px;
             font-weight: bold;
-            color: #cead42;
+            color: #044898;
             line-height: 1;
         }
 
@@ -535,7 +535,7 @@
         }
 
         .cart-item-name a:hover {
-            color: #cead42;
+            color: #044898;
         }
 
         .cart-item-category {
@@ -546,7 +546,7 @@
         .cart-item-price {
             font-size: 1.1rem;
             font-weight: 600;
-            color: #cead42;
+            color: #044898;
         }
 
         .cart-item-quantity {
@@ -585,7 +585,7 @@
         }
 
         .quantity-btn:hover {
-            background: #cead42;
+            background: #044898;
             color: white;
         }
 
@@ -664,7 +664,7 @@
         .cart-empty-btn {
             display: inline-block;
             padding: 12px 30px;
-            background: #cead42;
+            background: #044898;
             color: white;
             text-decoration: none;
             border-radius: 8px;
@@ -673,7 +673,7 @@
         }
 
         .cart-empty-btn:hover {
-            background: #b89a35;
+            background: #033a7a;
             transform: translateY(-2px);
         }
 
@@ -721,7 +721,7 @@
 
         .cart-summary-value {
             font-weight: 700;
-            color: #cead42;
+            color: #044898;
         }
 
         .cart-summary-value.total {
@@ -754,12 +754,12 @@
         }
 
         .checkout-btn {
-            background: #cead42;
+            background: #044898;
             color: white;
         }
 
         .checkout-btn:hover {
-            background: #b89a35;
+            background: #033a7a;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(206, 173, 66, 0.3);
         }
