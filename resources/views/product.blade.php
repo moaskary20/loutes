@@ -1013,48 +1013,9 @@
                     <div class="product-category">{{ $product->category->name_en ?? $product->category->name }}</div>
                 @endif
 
-                @php
-                    $avgRating = $product->reviews->avg('rating');
-                    $reviewsCount = $product->reviews->count();
-                @endphp
-
-                @if($avgRating)
-                    <div class="product-rating">
-                        <span class="product-rating-stars">
-                            @for($i = 1; $i <= 5; $i++)
-                                @if($i <= round($avgRating)) ★ @else ☆ @endif
-                            @endfor
-                        </span>
-                        <span class="product-rating-text">({{ number_format($avgRating, 1) }}) - {{ $reviewsCount }} {{ $reviewsCount === 1 ? 'review' : 'reviews' }}</span>
-                    </div>
-                @else
-                    <div class="product-rating">
-                        <span class="product-rating-text">No reviews yet</span>
-                    </div>
-                @endif
-
-                <div class="product-price-section">
-                    <span class="product-price">{{ number_format($product->price, 2) }} EGP</span>
-                    @if($product->original_price && $product->original_price > $product->price)
-                        <span class="product-original-price">{{ number_format($product->original_price, 2) }} EGP</span>
-                        @php
-                            $discountPercent = round((($product->original_price - $product->price) / $product->original_price) * 100);
-                        @endphp
-                        <span class="product-discount-badge">-{{ $discountPercent }}%</span>
-                    @endif
-                </div>
-
                 @if($product->short_description)
                     <div class="product-short-description">{{ $product->short_description }}</div>
                 @endif
-
-                <div class="product-stock {{ $product->stock_quantity > 0 ? 'in-stock' : 'out-of-stock' }}">
-                    @if($product->stock_quantity > 0)
-                        ✓ In Stock ({{ $product->stock_quantity }} available)
-                    @else
-                        ✗ Out of Stock
-                    @endif
-                </div>
 
                 <div class="product-quantity-controls">
                     <span class="quantity-label">Quantity:</span>
