@@ -643,6 +643,205 @@
             }
         }
 
+        /* Videos Section */
+        .videos-section {
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .videos-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(206,173,66,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .videos-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .videos-heading {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #cead42;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .videos-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #cead42, transparent);
+            border-radius: 2px;
+        }
+
+        .videos-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 60px;
+            margin-top: 40px;
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .video-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: white;
+            cursor: pointer;
+        }
+
+        .video-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(206, 173, 66, 0.3);
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            background: #000;
+            overflow: hidden;
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+            transition: opacity 0.3s;
+            z-index: 2;
+        }
+
+        .video-item.playing .video-overlay {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .video-play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(206, 173, 66, 0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-play-button:hover {
+            background: rgba(206, 173, 66, 1);
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(206, 173, 66, 0.5);
+        }
+
+        .video-play-button svg {
+            width: 40px;
+            height: 40px;
+            margin-left: 5px;
+            fill: white;
+        }
+
+        .video-item.playing .video-play-button {
+            display: none;
+        }
+
+        .video-info {
+            padding: 25px;
+            background: white;
+        }
+
+        .video-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #cead42 0%, #E8C95B 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .video-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .video-description {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 968px) {
+            .videos-section {
+                padding: 60px 20px;
+            }
+
+            .videos-heading {
+                font-size: 2rem;
+            }
+
+            .videos-subtitle {
+                font-size: 1rem;
+                margin-bottom: 40px;
+            }
+
+            .videos-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                margin-top: 40px;
+            }
+
+            .video-item:hover {
+                transform: translateY(-5px) scale(1.01);
+            }
+        }
+
         /* CTA Section */
         .cta-section {
             position: relative;
@@ -1126,6 +1325,81 @@ Today, the story continues with new chapters driven by passion, quality, and a g
         </div>
     </section>
 
+    <!-- Videos Section -->
+    <section class="videos-section">
+        <div class="videos-container">
+            <h2 class="videos-heading">Our Journey in Motion</h2>
+            <p class="videos-subtitle">Discover our story through these captivating videos</p>
+            <div class="videos-grid">
+                <!-- Video 3 -->
+                <div class="video-item" data-video="3">
+                    <div class="video-wrapper">
+                        <video preload="metadata" poster="">
+                            <source src="{{ asset('storage/sliders/video3.mp4') }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overlay">
+                            <div class="video-play-button">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-number">Video 3</span>
+                        <h3 class="video-title">Our Production Process</h3>
+                        <p class="video-description">Take a behind-the-scenes look at how we create our premium products with care and precision.</p>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="video-item" data-video="2">
+                    <div class="video-wrapper">
+                        <video preload="metadata" poster="">
+                            <source src="{{ asset('storage/sliders/video2.mp4') }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overlay">
+                            <div class="video-play-button">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-number">Video 2</span>
+                        <h3 class="video-title">Quality Excellence</h3>
+                        <p class="video-description">Learn about our commitment to quality and the standards that make us stand out in the industry.</p>
+                    </div>
+                </div>
+
+                <!-- Video 1 -->
+                <div class="video-item" data-video="1">
+                    <div class="video-wrapper">
+                        <video preload="metadata" poster="">
+                            <source src="{{ asset('storage/sliders/video1.mp4') }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overlay">
+                            <div class="video-play-button">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-number">Video 1</span>
+                        <h3 class="video-title">Our Story</h3>
+                        <p class="video-description">Experience the journey that brought us here and the values that drive us forward every day.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="cta-background">
@@ -1212,6 +1486,62 @@ Today, the story continues with new chapters driven by passion, quality, and a g
         } else {
             drawAboutWave();
         }
+    </script>
+
+    <script>
+        // Video Controls
+        document.addEventListener('DOMContentLoaded', function() {
+            const videoItems = document.querySelectorAll('.video-item');
+            
+            videoItems.forEach(item => {
+                const video = item.querySelector('video');
+                const playButton = item.querySelector('.video-play-button');
+                const overlay = item.querySelector('.video-overlay');
+                
+                if (!video || !playButton) return;
+
+                // Play button click
+                playButton.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    video.play();
+                    item.classList.add('playing');
+                });
+
+                // Pause when video ends
+                video.addEventListener('ended', function() {
+                    item.classList.remove('playing');
+                    overlay.style.opacity = '1';
+                });
+
+                // Show overlay when paused
+                video.addEventListener('pause', function() {
+                    if (video.currentTime > 0 && !video.ended) {
+                        item.classList.remove('playing');
+                        overlay.style.opacity = '1';
+                    }
+                });
+
+                // Click on video to pause
+                video.addEventListener('click', function() {
+                    if (!video.paused) {
+                        video.pause();
+                    }
+                });
+
+                // Pause other videos when one plays
+                video.addEventListener('play', function() {
+                    videoItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            const otherVideo = otherItem.querySelector('video');
+                            if (otherVideo && !otherVideo.paused) {
+                                otherVideo.pause();
+                                otherItem.classList.remove('playing');
+                            }
+                        }
+                    });
+                });
+            });
+        });
     </script>
 
     <script>
