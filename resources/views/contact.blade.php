@@ -704,32 +704,23 @@
 
         .contact-ad-wrapper {
             position: relative;
-            background: linear-gradient(135deg, #cead42 0%, #f5d87a 100%);
+            background: transparent;
             border-radius: 15px;
-            padding: 50px 40px;
+            padding: 0;
             overflow: hidden;
             min-height: 600px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
+            align-items: center;
         }
 
         .contact-ad-sunburst {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            height: 70%;
-            background: radial-gradient(ellipse at center bottom, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
-            pointer-events: none;
+            display: none;
         }
 
         .contact-ad-logo {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            margin-bottom: 30px;
+            display: none;
         }
 
         .contact-ad-logo img {
@@ -745,10 +736,7 @@
         }
 
         .contact-ad-product-title {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            margin-bottom: 30px;
+            display: none;
         }
 
         .contact-ad-product-title h2 {
@@ -776,24 +764,22 @@
             position: relative;
             z-index: 2;
             text-align: center;
-            margin-top: auto;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .contact-ad-product-image img {
-            max-width: 100%;
-            height: auto;
-            max-height: 350px;
-            object-fit: contain;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
         }
 
         .contact-ad-triangles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            opacity: 0.1;
+            display: none;
         }
 
         .contact-ad-triangle {
@@ -1309,22 +1295,8 @@
     <section class="contact-form-section">
         <!-- Product Ad -->
         <div class="contact-ad-wrapper">
-            <div class="contact-ad-sunburst"></div>
-            <div class="contact-ad-triangles" id="trianglesContainer"></div>
-            
-            <div class="contact-ad-logo">
-                <div style="font-size: 2rem; font-weight: 900; color: #cead42; margin-bottom: 5px;">LOTUS</div>
-                <div class="contact-ad-logo-text">اللوتس</div>
-                <div style="font-size: 0.9rem; color: #333; margin-top: 5px;">الجودة سر نجاحنا</div>
-            </div>
-
-            <div class="contact-ad-product-title">
-                <h2>Choco <span class="leaf">🍃</span> Besto</h2>
-                <div class="arabic">شوكو بيستو</div>
-            </div>
-
             <div class="contact-ad-product-image">
-                <img src="https://via.placeholder.com/400x500/4A90E2/FFFFFF?text=Choco+Besto+Crisp+Carnaval" alt="Choco Besto Crisp Carnaval">
+                <img src="{{ asset('storage/sliders/image1.jpeg') }}" alt="Contact Image">
             </div>
         </div>
 
