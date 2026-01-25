@@ -1250,7 +1250,8 @@
                 <div class="contact-card-content">
                     <h3 class="contact-card-title">Call us today</h3>
                     <div class="contact-card-info">
-                        01008019097 / 01140408322
+                        الإدارة: 01206112718<br>
+                        المبيعات: 01275777972
                     </div>
                 </div>
             </div>
