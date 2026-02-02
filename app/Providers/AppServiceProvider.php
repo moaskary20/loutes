@@ -4,13 +4,15 @@ namespace App\Providers;
 
 use App\Models\Customer;
 use App\Policies\CustomerPolicy;
-use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
+    /**
+     * The policy mappings for the application.
+     *
+     * @var array
+     */
     protected $policies = [
         Customer::class => CustomerPolicy::class,
     ];
@@ -28,33 +30,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->registerPolicies();
-
-        // Set application locale based on session or cookie
-        $this->setApplicationLocale();
-    }
-
-    /**
-     * Set the application locale based on session or cookie.
-     */
-    private function setApplicationLocale(): void
-    {
-        // Priority: Session > Cookie > Default (en)
-        $locale = Session::get('locale');
-
-        if (!$locale) {
-            // Try to get from request cookie
-            $locale = request()->cookie('locale');
-        }
-
-        // Validate and set locale
-        if ($locale && in_array($locale, ['ar', 'en'])) {
-            App::setLocale($locale);
-            Session::put('locale', $locale);
-        } else {
-            // Default to English
-            App::setLocale('en');
-            Session::put('locale', 'en');
+        // Register policies
+        foreach ($this->policies as $model => $policy) {
+            \Illuminate\Support\Facades\Gate::policy($model, $policy);
         }
     }
 }

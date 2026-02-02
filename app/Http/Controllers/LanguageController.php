@@ -38,8 +38,8 @@ class LanguageController extends Controller
             525600,             // minutes (1 year)
             '/',                // path
             null,               // domain
-            false,              // secure (http/https)
-            true                // httpOnly (false to allow JS access)
+            false,              // secure (http in dev, https in production)
+            true                // httpOnly (secure from JS access)
         );
 
         // Get the previous URL to redirect back
