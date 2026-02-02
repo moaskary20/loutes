@@ -2,6 +2,7 @@
     .language-dropdown {
         position: relative;
         display: inline-block;
+        z-index: 1001;
     }
 
     .language-dropdown-btn {
@@ -58,6 +59,7 @@
         overflow: hidden;
         margin-top: 6px;
         border: 1px solid #e5e7eb;
+        z-index: 2000;
     }
 
     .language-dropdown-content.show {

@@ -50,6 +50,7 @@
             color: white;
             padding: 8px 15px;
             font-size: 14px;
+            overflow: visible;
         }
 
         .top-bar-content {

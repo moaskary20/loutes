@@ -51,6 +51,7 @@
             padding: 8px 15px;
             font-size: 14px;
             border-radius: 8px 8px 0 0;
+            overflow: visible;
         }
 
         .top-bar-content {
@@ -1168,7 +1169,7 @@
                         </span>
                     </div>
                     <div class="top-bar-right">
-                        <span>Follow us on</span>
+                        <span>{{ __('web.follow_us_on') }}</span>
                         <div class="social-icons">
                             <a href="https://www.facebook.com/share/18ALRh5g9A/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">f</a>
                             <a href="https://www.instagram.com/lotussweetsegypt?igsh=MWUwaHAwbzJtcXI0Yw==" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">📷</a>
@@ -1245,10 +1246,10 @@
                     </svg>
                 </div>
                 <div class="contact-card-content">
-                    <h3 class="contact-card-title">Call us today</h3>
+                    <h3 class="contact-card-title">{{ __('web.contact_call_us') }}</h3>
                     <div class="contact-card-info">
-                        الإدارة: 01206112718<br>
-                        المبيعات: 01275777972
+                        {{ __('web.contact_admin_phone') }}<br>
+                        {{ __('web.contact_sales_phone') }}
                     </div>
                 </div>
             </div>
@@ -1279,9 +1280,9 @@
                     </svg>
                 </div>
                 <div class="contact-card-content">
-                    <h3 class="contact-card-title">Visit our HQ</h3>
+                    <h3 class="contact-card-title">{{ __('web.contact_visit_hq') }}</h3>
                     <div class="contact-card-info">
-                        Sara El-Bitash Building, branching off from Hussein Qabdaya Street, El-Bitash, Dekheila, Agami
+                        {{ __('web.contact_hq_address') }}
                     </div>
                 </div>
             </div>
@@ -1301,24 +1302,24 @@
         <div class="contact-form-wrapper">
             <h2 class="contact-form-title">{{ __('web.contact_send_message') }}</h2>
             <p class="contact-form-description">
-                If you have an inquiry or would like more information about one or more of our products, do not hesitate to fill out the following form and we will reply to you as soon as possible.
+                {{ __('web.contact_form_description') }}
             </p>
             <form action="{{ route('contact.submit') }}" method="POST">
                 @csrf
                 <div class="contact-form-group">
-                    <label for="name" class="contact-form-label">Your name</label>
+                    <label for="name" class="contact-form-label">{{ __('web.contact_form_name') }}</label>
                     <input type="text" id="name" name="name" class="contact-form-input" required>
                 </div>
                 <div class="contact-form-group">
-                    <label for="email" class="contact-form-label">Your email</label>
+                    <label for="email" class="contact-form-label">{{ __('web.contact_form_email') }}</label>
                     <input type="email" id="email" name="email" class="contact-form-input" required>
                 </div>
                 <div class="contact-form-group">
-                    <label for="phone" class="contact-form-label">Phone</label>
+                    <label for="phone" class="contact-form-label">{{ __('web.contact_form_phone') }}</label>
                     <input type="tel" id="phone" name="phone" class="contact-form-input" required>
                 </div>
                 <div class="contact-form-group">
-                    <label for="message" class="contact-form-label">Your message</label>
+                    <label for="message" class="contact-form-label">{{ __('web.contact_form_message') }}</label>
                     <textarea id="message" name="message" class="contact-form-textarea" required></textarea>
                 </div>
                 <button type="submit" class="contact-form-submit">{{ __('web.submit') }}</button>
@@ -1334,8 +1335,8 @@
         </div>
         <div class="cta-content">
             <div class="cta-text-wrapper">
-                <h2 class="cta-main-text">Let's start working together now</h2>
-                <p class="cta-sub-text">For more information about the products offered by the company, do not hesitate to contact us.</p>
+                <h2 class="cta-main-text">{{ __('web.cta_heading') }}</h2>
+                <p class="cta-sub-text">{{ __('web.cta_description') }}</p>
             </div>
             <div class="cta-button-wrapper">
                 <a href="{{ route('contact') }}" class="cta-button">

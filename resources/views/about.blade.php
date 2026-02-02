@@ -49,6 +49,7 @@
             backdrop-filter: blur(10px);
             color: white;
             padding: 10px 20px;
+            overflow: visible;
         }
 
         .top-bar-content {
@@ -1294,15 +1295,15 @@
         <h2 class="about-main-heading">{{ __('web.lotus_food_industries') }}</h2>
         <div class="about-text-content">
             <p class="about-paragraph">
-                We are a specialized manufacturing company dedicated to delivering high-quality products that offer an exceptional experience to our customers.
+                {{ __('web.about_company_intro') }}
 <br>
-Our foundation is built on a clear vision centered around innovation, commitment, and operating with world-class standards at every stage of production.
+{{ __('web.about_foundation') }}
 <br>
-We believe that success begins with the details. That’s why we carefully select premium raw materials, apply strict quality control systems, and continuously invest in advanced production technologies.
+{{ __('web.about_details_quality') }}
 <br>
-With a skilled and passionate team, our company has earned a strong reputation in the market and gained the trust of customers by providing products that combine quality, refined taste, and reliability.
+{{ __('web.about_team_reputation') }}
 <br>
-Today, we continue our journey of regional expansion and market growth while staying true to our core values that guide us in delivering excellence and creating moments of joy.
+{{ __('web.about_journey_expansion') }}
             </p>
 
         </div>
@@ -1316,15 +1317,16 @@ Today, we continue our journey of regional expansion and market growth while sta
             {{ __('web.about_story') }}
                     </h2>
             <p class="about-story-text">
-
-               Our journey began with a simple passion that grew into a dream—one that evolved into a project aiming to become a distinguished name in the world of manufacturing.
+               {{ __('web.story_paragraph_1') }}
             <br>
-The company was founded on the desire to offer a unique experience that reflects craftsmanship, authenticity, and a deep commitment to quality.
-<br>
-Over time, our ideas matured, our capabilities expanded, and we built a strong identity based on innovation, quality, and teamwork.
-<br>
-Like any successful journey, we faced challenges in the early days—but determination shaped who we are today. Every step strengthened our expertise, refined our processes, and elevated the standard of what we deliver.
-Today, the story continues with new chapters driven by passion, quality, and a genuine desire to create value and serve our customers with excellence            </p>
+{{ __('web.story_paragraph_2') }}
+            <br>
+{{ __('web.story_paragraph_3') }}
+            <br>
+{{ __('web.story_paragraph_4') }}
+            <br>
+{{ __('web.story_paragraph_5') }}
+            </p>
         </div>
 
         <!-- Product Ad -->
@@ -1336,8 +1338,8 @@ Today, the story continues with new chapters driven by passion, quality, and a g
     <!-- Videos Section -->
     <section class="videos-section">
         <div class="videos-container">
-            <h2 class="videos-heading">Our Journey in Motion</h2>
-            <p class="videos-subtitle">Discover our story through these captivating videos</p>
+            <h2 class="videos-heading">{{ __('web.about_journey_motion') }}</h2>
+            <p class="videos-subtitle">{{ __('web.videos_discover') }}</p>
             <div class="videos-grid">
                 <!-- Video 3 -->
                 <div class="video-item" data-video="3">
@@ -1356,8 +1358,8 @@ Today, the story continues with new chapters driven by passion, quality, and a g
                     </div>
                     <div class="video-info">
                         <span class="video-number">Video 3</span>
-                        <h3 class="video-title">Our Production Process</h3>
-                        <p class="video-description">Take a behind-the-scenes look at how we create our premium products with care and precision.</p>
+                        <h3 class="video-title">{{ __('web.video_production_title') }}</h3>
+                        <p class="video-description">{{ __('web.video_production_desc') }}</p>
                     </div>
                 </div>
 
@@ -1378,8 +1380,8 @@ Today, the story continues with new chapters driven by passion, quality, and a g
                     </div>
                     <div class="video-info">
                         <span class="video-number">Video 2</span>
-                        <h3 class="video-title">Quality Excellence</h3>
-                        <p class="video-description">Learn about our commitment to quality and the standards that make us stand out in the industry.</p>
+                        <h3 class="video-title">{{ __('web.video_quality_title') }}</h3>
+                        <p class="video-description">{{ __('web.video_quality_desc') }}</p>
                     </div>
                 </div>
 
@@ -1416,12 +1418,12 @@ Today, the story continues with new chapters driven by passion, quality, and a g
         </div>
         <div class="cta-content">
             <div class="cta-text-wrapper">
-                <h2 class="cta-main-text">Let's start working together now</h2>
-                <p class="cta-sub-text">For more information about the products offered by the company, do not hesitate to contact us.</p>
+                <h2 class="cta-main-text">{{ __('web.cta_heading') }}</h2>
+                <p class="cta-sub-text">{{ __('web.cta_description') }}</p>
             </div>
             <div class="cta-button-wrapper">
                 <a href="{{ route('contact') }}" class="cta-button">
-                    Get A Quote
+                    {{ __('web.get_quote') }}
                     <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
                     </svg>

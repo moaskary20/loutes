@@ -50,6 +50,7 @@
             padding: 8px 15px;
             font-size: 14px;
             border-radius: 8px 8px 0 0;
+            overflow: visible;
         }
 
         .top-bar-content {
@@ -2113,7 +2114,7 @@
     @if($categories->count() > 0)
     <section class="categories-section">
         <div class="categories-container">
-            <h2 class="categories-heading">Our Categories</h2>
+            <h2 class="categories-heading">{{ __('web.our_categories') }}</h2>
             <div class="categories-grid-wrapper">
                 <div class="categories-grid">
                     @foreach($categories as $category)
@@ -2436,16 +2437,16 @@
     <section class="about-section">
         <div class="about-container">
             <h2 class="about-heading">
-                We believe that success begins with the details
+                {{ __('web.about_heading_details') }}
             </h2>
             <div class="about-content">
                 <p class="about-paragraph">
-                That’s why we carefully select premium raw materials, apply strict quality control systems, and continuously invest in advanced production technologies.
+                {{ __('web.about_details_quality') }}
                 </p>
                 <p class="about-paragraph">
-                With a skilled and passionate team, our company has earned a strong reputation in the market and gained the trust of customers by providing products that combine quality, refined taste, and reliability.                </p>
+                {{ __('web.about_team_reputation') }}                </p>
                 <p class="about-paragraph">
-                Today, we continue our journey of regional expansion and market growth while staying true to our core values that guide us in delivering excellence and creating moments of joy.                </p>
+                {{ __('web.about_journey_expansion') }}                </p>
             </div>
         </div>
     </section>
@@ -2522,19 +2523,17 @@
             </div>
             <!-- النص على اليمين -->
             <div class="products-text-content">
-                <h2 class="products-heading">200+ Many distinctive products with the best quality and great taste</h2>
+                <h2 class="products-heading">{{ __('web.products_count') }}</h2>
                 <p class="products-description">
-                Crafting Joy, One Moment at a Time
-
-Experience a world where quality, craftsmanship, and creativity come together.
-We are committed to delivering products made with passion, refined through innovation, and trusted for their consistency.
-Discover excellence in every detail.
-</p>
+                {{ __('web.products_joy') }}
+                <br>
+                {{ __('web.products_joy_description') }}
+                </p>
                 <a href="{{ $siteSettings->view_products_link ?? '#' }}" class="products-view-btn">
                     <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="margin-left: 5px;">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                     </svg>
-                    View Products
+                    {{ __('web.view_products') }}
                 </a>
             </div>
         </div>
@@ -2565,21 +2564,23 @@ Discover excellence in every detail.
                 </div>
                 <div class="export-text-content">
                     <p class="export-text-orange">
-                    Food Safety Policy
+                    {{ __('web.food_safety_policy') }}
                     </p>
                     <p class="export-text-grey">
 
-                    We ensure safe and healthy products through:
+                    {{ __('web.ensure_safe_products') }}
 <br>
-Adopting international safety standards.
+{{ __('web.international_standards') }}
 
-Closely monitoring daily operations and adhering to hygiene procedures.
 <br>
-Effectively managing the supply chain to ensure safety from source to customer.
+{{ __('web.daily_monitoring') }}
 <br>
-Continuously training staff on the latest safety practices.
+{{ __('web.supply_chain') }}
 <br>
-Periodically reviewing systems and policies to ensure compliance and continuous improvement.                    </p>
+{{ __('web.staff_training') }}
+<br>
+{{ __('web.periodic_review') }}
+                    </p>
 
                 </div>
             </div>
@@ -2606,28 +2607,28 @@ Periodically reviewing systems and policies to ensure compliance and continuous 
                 </div>
                 <div class="video-text-content">
                     <p class="video-text-orange">
-Our Objectives
+{{ __('web.our_objectives') }}
                     </p>
                     <p class="video-text-grey">
-                    1. Achieve high performance levels that ensure consistent and sustainable quality.
+                    1. {{ __('web.objective_1') }}
 <br>
 
-2. Develop an innovative and motivating work environment for employees.
+2. {{ __('web.objective_2') }}
 <br>
 
-3. Expand the company’s presence in local and regional markets.
+3. {{ __('web.objective_3') }}
 <br>
 
-4. Enhance operational efficiency and invest in modern technologies.
+4. {{ __('web.objective_4') }}
 <br>
 
-5. Build long-term trust-based relationships with clients and partners.
+5. {{ __('web.objective_5') }}
 <br>
 
-6. Improve customer experience through continuous development and effective engagement.
+6. {{ __('web.objective_6') }}
 <br>
 
-7. Implement the highest safety standards and comply with local and international regulations.                    </p>
+7. {{ __('web.objective_7') }}                    </p>
 
                 </div>
             </div>
@@ -2646,8 +2647,8 @@ Our Objectives
         </div>
         <div class="cta-content">
             <div class="cta-text-wrapper">
-                <h2 class="cta-main-text">Let's start working together now</h2>
-                <p class="cta-sub-text">For more information about the products offered by the company, do not hesitate to contact us.</p>
+                <h2 class="cta-main-text">{{ __('web.cta_heading') }}</h2>
+                <p class="cta-sub-text">{{ __('web.cta_description') }}</p>
             </div>
             <div class="cta-button-wrapper">
                 <a href="#" class="cta-button">

@@ -48,6 +48,7 @@
             color: white;
             padding: 8px 15px;
             font-size: 14px;
+            overflow: visible;
         }
 
         .top-bar-content {
@@ -742,16 +743,16 @@
         <div class="careers-text-block">
             <h2>{{ __('web.careers_why_work') }}</h2>
             <p>
-                At Lotus, we believe that our people are the heart of our success. We bring together talented individuals who are passionate about quality, innovation, and creating unique snacking experiences for our customers.
+                {{ __('web.careers_why_work_desc_1') }}
             </p>
             <p>
-                We offer a dynamic and supportive environment where you can grow your career, develop new skills, and contribute to meaningful projects across production, quality, marketing, sales, logistics, and more.
+                {{ __('web.careers_why_work_desc_2') }}
             </p>
             <ul>
-                <li>Modern and safe work environment.</li>
-                <li>Continuous training and development opportunities.</li>
-                <li>Competitive packages and growth plans.</li>
-                <li>Strong team spirit and collaborative culture.</li>
+                <li>{{ __('web.careers_benefit_1') }}</li>
+                <li>{{ __('web.careers_benefit_2') }}</li>
+                <li>{{ __('web.careers_benefit_3') }}</li>
+                <li>{{ __('web.careers_benefit_4') }}</li>
             </ul>
         </div>
         <div class="careers-side-card">

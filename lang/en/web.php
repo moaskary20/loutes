@@ -31,7 +31,7 @@ return [
     'about_heading' => 'Best Quality - Best Price',
     'about_content' => 'Loutes Store is your first stop for all high-quality products. We pride ourselves on offering the best products at the best prices with excellent customer service.',
     'about_us' => 'About Us',
-    'established_1993' => 'Established in 1993',
+    'established_1993' => 'Established in 2018',
     'lotus_food_industries' => 'Lotus For Food Industries',
 
     // Products Section
@@ -101,6 +101,44 @@ return [
     'contact_send_email' => 'Send an Email',
     'contact_send_message' => 'Send us a message',
 
+    // Home Page - Products Section
+    'products_count' => '200+ Many distinctive products with the best quality and great taste',
+    'products_joy' => 'Crafting Joy, One Moment at a Time',
+    'products_joy_description' => 'Experience a world where quality, craftsmanship, and creativity come together. We are committed to delivering products made with passion, refined through innovation, and trusted for their consistency. Discover excellence in every detail.',
+    'view_products' => 'View Products',
+
+    // Home Page - Export/Safety Section
+    'food_safety_policy' => 'Food Safety Policy',
+    'ensure_safe_products' => 'We ensure safe and healthy products through:',
+    'international_standards' => 'Adopting international safety standards.',
+    'daily_monitoring' => 'Closely monitoring daily operations and adhering to hygiene procedures.',
+    'supply_chain' => 'Effectively managing the supply chain to ensure safety from source to customer.',
+    'staff_training' => 'Continuously training staff on the latest safety practices.',
+    'periodic_review' => 'Periodically reviewing systems and policies to ensure compliance and continuous improvement.',
+
+    // Home Page - Video/Objectives Section
+    'our_objectives' => 'Our Objectives',
+    'objective_1' => 'Achieve high performance levels that ensure consistent and sustainable quality.',
+    'objective_2' => 'Develop an innovative and motivating work environment for employees.',
+    'objective_3' => 'Expand the company\'s presence in local and regional markets.',
+    'objective_4' => 'Enhance operational efficiency and invest in modern technologies.',
+    'objective_5' => 'Build long-term trust-based relationships with clients and partners.',
+    'objective_6' => 'Improve customer experience through continuous development and effective engagement.',
+    'objective_7' => 'Implement the highest safety standards and comply with local and international regulations.',
+
+    // Home Page - CTA Section
+    'cta_heading' => 'Let\'s start working together now',
+    'cta_description' => 'For more information about the products offered by the company, do not hesitate to contact us.',
+
+    // Home Page - About Section
+    'about_heading_details' => 'We believe that success begins with the details',
+    'about_paragraph_1' => 'That\'s why we carefully select premium raw materials, apply strict quality control systems, and continuously invest in advanced production technologies.',
+    'about_company_intro' => 'We are a specialized manufacturing company dedicated to delivering high-quality products that offer an exceptional experience to our customers.',
+    'about_foundation' => 'Our foundation is built on a clear vision centered around innovation, commitment, and operating with world-class standards at every stage of production.',
+    'about_details_quality' => 'We believe that success begins with the details. That\'s why we carefully select premium raw materials, apply strict quality control systems, and continuously invest in advanced production technologies.',
+    'about_team_reputation' => 'With a skilled and passionate team, our company has earned a strong reputation in the market and gained the trust of customers by providing products that combine quality, refined taste, and reliability.',
+    'about_journey_expansion' => 'Today, we continue our journey of regional expansion and market growth while staying true to our core values that guide us in delivering excellence and creating moments of joy.',
+
     // Contact
     'contact_title' => 'Contact Us - Loutes Store',
     'contact_heading' => 'Get In Touch',
@@ -158,6 +196,45 @@ return [
     'footer_products' => 'Products',
     'footer_contact' => 'Contact',
     'footer_rights' => 'All rights reserved',
+
+    // About Page - Story Section
+    'story_paragraph_1' => 'Our journey began with a simple passion that grew into a dream—one that evolved into a project aiming to become a distinguished name in the world of manufacturing.',
+    'story_paragraph_2' => 'The company was founded on the desire to offer a unique experience that reflects craftsmanship, authenticity, and a deep commitment to quality.',
+    'story_paragraph_3' => 'Over time, our ideas matured, our capabilities expanded, and we built a strong identity based on innovation, quality, and teamwork.',
+    'story_paragraph_4' => 'Like any successful journey, we faced challenges in the early days—but determination shaped who we are today. Every step strengthened our expertise, refined our processes, and elevated the standard of what we deliver.',
+    'story_paragraph_5' => 'Today, the story continues with new chapters driven by passion, quality, and a genuine desire to create value and serve our customers with excellence.',
+
+    // About Page - Videos Section
+    'about_journey_motion' => 'Our Journey in Motion',
+    'videos_discover' => 'Discover our story through these captivating videos',
+    'video_production_title' => 'Our Production Process',
+    'video_production_desc' => 'Take a behind-the-scenes look at how we create our premium products with care and precision.',
+    'video_quality_title' => 'Quality Excellence',
+    'video_quality_desc' => 'Learn about our commitment to quality and the standards that make us stand out in the industry.',
+
+    // Careers Page
+    'careers_why_work_desc_1' => 'At Lotus, we believe that our people are the heart of our success. We bring together talented individuals who are passionate about quality, innovation, and creating unique snacking experiences for our customers.',
+    'careers_why_work_desc_2' => 'We offer a dynamic and supportive environment where you can grow your career, develop new skills, and contribute to meaningful projects across production, quality, marketing, sales, logistics, and more.',
+    'careers_benefit_1' => 'Modern and safe work environment.',
+    'careers_benefit_2' => 'Continuous training and development opportunities.',
+    'careers_benefit_3' => 'Competitive packages and growth plans.',
+    'careers_benefit_4' => 'Strong team spirit and collaborative culture.',
+
+    // Contact Page
+    'contact_call_us' => 'Call us today',
+    'contact_admin_phone' => 'Admin: 01206112718',
+    'contact_sales_phone' => 'Sales: 01275777972',
+    'contact_visit_hq' => 'Visit our HQ',
+    'contact_hq_address' => 'Sara El-Bitash Building, branching off from Hussein Qabdaya Street, El-Bitash, Dekheila, Agami',
+    'contact_form_description' => 'If you have an inquiry or would like more information about one or more of our products, do not hesitate to fill out the following form and we will reply to you as soon as possible.',
+    'contact_form_name' => 'Your name',
+    'contact_form_email' => 'Your email',
+    'contact_form_phone' => 'Phone',
+    'contact_form_message' => 'Your message',
+    'contact_form_submit' => 'Send',
+
+    // Social
+    'follow_us_on' => 'Follow us on',
 
     // General
     'search' => 'Search',
