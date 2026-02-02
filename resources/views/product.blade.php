@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,7 @@
 
         body {
             font-family: 'Tajawal', sans-serif;
-            direction: ltr;
+            direction: {{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }};
             overflow-x: hidden;
             background: #f5f5f5;
         }
@@ -881,10 +881,7 @@
                 <div class="top-bar-content">
                     <div class="top-bar-left">
                         <div class="language-selector">
-                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.423c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H11.5v3.923zm1.468-1.855c.24.29.461.603.654.94a7.024 7.024 0 0 0 1.756-1.085h-1.83c-.135.431-.362.862-.58 1.145z"/>
-                            </svg>
-                            <span>English</span>
+                            @include('partials.language-dropdown')
                         </div>
                     </div>
                     <div class="top-bar-center">
@@ -913,11 +910,11 @@
                         </div>
                     </div>
                     <div class="nav-center">
-                        <a href="{{ route('home') }}" class="nav-link">Home</a>
-                        <a href="{{ route('about') }}" class="nav-link">About Us</a>
-                        <a href="{{ route('products') }}" class="nav-link">Our Products</a>
-                        <a href="{{ route('careers') }}" class="nav-link">Careers</a>
-                        <a href="{{ route('contact') }}" class="nav-link">Contact Us</a>
+                        <a href="{{ route('home') }}" class="nav-link">{{ __('web.home') }}</a>
+                        <a href="{{ route('about') }}" class="nav-link">{{ __('web.about_us') }}</a>
+                        <a href="{{ route('products') }}" class="nav-link">{{ __('web.our_products') }}</a>
+                        <a href="{{ route('careers') }}" class="nav-link">{{ __('web.careers') }}</a>
+                        <a href="{{ route('contact') }}" class="nav-link">{{ __('web.contact_us') }}</a>
                     </div>
                     <div class="nav-right">
                         <button class="get-quote-btn">Get A Quote</button>
@@ -948,11 +945,11 @@
                 </button>
             </div>
             <div class="mobile-menu-links">
-                <a href="{{ route('home') }}" class="mobile-menu-link">Home</a>
-                <a href="{{ route('about') }}" class="mobile-menu-link">About Us</a>
-                <a href="{{ route('products') }}" class="mobile-menu-link">Our Products</a>
-                <a href="{{ route('careers') }}" class="mobile-menu-link">Careers</a>
-                <a href="{{ route('contact') }}" class="mobile-menu-link">Contact Us</a>
+                <a href="{{ route('home') }}" class="mobile-menu-link">{{ __('web.home') }}</a>
+                <a href="{{ route('about') }}" class="mobile-menu-link">{{ __('web.about_us') }}</a>
+                <a href="{{ route('products') }}" class="mobile-menu-link">{{ __('web.our_products') }}</a>
+                <a href="{{ route('careers') }}" class="mobile-menu-link">{{ __('web.careers') }}</a>
+                <a href="{{ route('contact') }}" class="mobile-menu-link">{{ __('web.contact_us') }}</a>
                 <a href="{{ route('cart.index') }}" class="mobile-menu-link">
                     Shopping Cart
                     @if(\App\Helpers\CartHelper::getCartCount() > 0)
@@ -975,7 +972,7 @@
         <div class="product-hero-overlay"></div>
         <div class="product-hero-content">
             <h1 class="product-hero-title">{{ $product->name }}</h1>
-            <p class="product-hero-subtitle">Product Details</p>
+            <p class="product-hero-subtitle">{{ __('web.product_details') }}</p>
         </div>
         <canvas id="productHeroWaveCanvas" class="product-hero-wave-canvas"></canvas>
     </section>
@@ -1018,7 +1015,7 @@
                 @endif
 
                 <div class="product-quantity-controls">
-                    <span class="quantity-label">Quantity:</span>
+                    <span class="quantity-label">{{ __('web.product_quantity') }}:</span>
                     <div class="quantity-input-group">
                         <button class="quantity-btn" id="decreaseQty">-</button>
                         <input type="number" id="productQuantity" class="quantity-input" value="1" min="1" max="{{ $product->stock_quantity ?? 999 }}">
@@ -1026,7 +1023,7 @@
                     </div>
                     <button class="add-to-cart-btn" id="addToCartBtn" data-product-id="{{ $product->id }}" data-product-name="{{ $product->name }}" {{ $product->stock_quantity <= 0 ? 'disabled' : '' }}>
                         <span>🛒</span>
-                        <span>Add to Cart</span>
+                        <span>{{ __('web.product_add_to_cart') }}</span>
                     </button>
                 </div>
             </div>
@@ -1048,7 +1045,7 @@
     <!-- Related Products -->
     @if($relatedProducts->count() > 0)
         <section class="related-products-section">
-            <h2 class="related-products-title">Related Products</h2>
+            <h2 class="related-products-title">{{ __('web.related_products') }}</h2>
             <div class="related-products-grid">
                 @foreach($relatedProducts as $relatedProduct)
                     <div class="related-product-card">

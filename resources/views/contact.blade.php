@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Loutes Store</title>
+    <title>{{ __('web.contact_title') }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
 
         body {
             font-family: 'Tajawal', sans-serif;
-            direction: ltr;
+            direction: {{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }};
             overflow-x: hidden;
             background-color:rgb(255, 255, 255);
         }
@@ -1156,15 +1156,12 @@
                 <div class="top-bar-content">
                     <div class="top-bar-left">
                         <div class="language-selector">
-                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.423c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H11.5v3.923zm1.468-1.855c.24.29.461.603.654.94a7.024 7.024 0 0 0 1.756-1.085h-1.83c-.135.431-.362.862-.58 1.145z"/>
-                            </svg>
-                            <span>English</span>
+                            @include('partials.language-dropdown')
                         </div>
                     </div>
                     <div class="top-bar-center">
                         <span class="welcome-text">
-                            Welcome To Loutes Store
+                            {{ __('web.welcome') }}
                             <svg width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
                             </svg>
@@ -1196,14 +1193,14 @@
                         </div>
                     </div>
                     <div class="nav-center">
-                        <a href="{{ route('home') }}" class="nav-link">Home</a>
-                        <a href="{{ route('about') }}" class="nav-link">About Us</a>
-                        <a href="{{ route('products') }}" class="nav-link">Our Products</a>
-                        <a href="{{ route('careers') }}" class="nav-link">Careers</a>
-                        <a href="{{ route('contact') }}" class="nav-link">Contact Us</a>
+                        <a href="{{ route('home') }}" class="nav-link">{{ __('web.home') }}</a>
+                        <a href="{{ route('about') }}" class="nav-link">{{ __('web.about_us') }}</a>
+                        <a href="{{ route('products') }}" class="nav-link">{{ __('web.our_products') }}</a>
+                        <a href="{{ route('careers') }}" class="nav-link">{{ __('web.careers') }}</a>
+                        <a href="{{ route('contact') }}" class="nav-link">{{ __('web.contact_us') }}</a>
                     </div>
                     <div class="nav-right">
-                        <button class="get-quote-btn">Get A Quote</button>
+                        <button class="get-quote-btn">{{ __('web.get_quote') }}</button>
                         <a href="{{ route('cart.index') }}" class="cart-icon-wrapper" title="Shopping Cart">
                             <div class="cart-icon">
                                 <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1229,9 +1226,9 @@
         </div>
         <div class="contact-header-overlay"></div>
         <div class="contact-header-content">
-            <h1 class="contact-header-title">Contact Us</h1>
+            <h1 class="contact-header-title">{{ __('web.contact_us') }}</h1>
             <div class="contact-breadcrumb">
-                <a href="{{ route('home') }}">Home</a> > Contact Us
+                <a href="{{ route('home') }}">{{ __('web.home') }}</a> > {{ __('web.contact_us') }}
             </div>
         </div>
         <canvas id="contactWaveCanvas" class="contact-wave-canvas"></canvas>
@@ -1265,7 +1262,7 @@
                     </svg>
                 </div>
                 <div class="contact-card-content">
-                    <h3 class="contact-card-title">Send an Email</h3>
+                    <h3 class="contact-card-title">{{ __('web.contact_send_email') }}</h3>
                     <div class="contact-card-info">
                         <a href="mailto:info@lotus-co.com">info@lotus-co.com
                         </a>
@@ -1302,7 +1299,7 @@
 
         <!-- Contact Form -->
         <div class="contact-form-wrapper">
-            <h2 class="contact-form-title">Send us a message</h2>
+            <h2 class="contact-form-title">{{ __('web.contact_send_message') }}</h2>
             <p class="contact-form-description">
                 If you have an inquiry or would like more information about one or more of our products, do not hesitate to fill out the following form and we will reply to you as soon as possible.
             </p>
@@ -1324,7 +1321,7 @@
                     <label for="message" class="contact-form-label">Your message</label>
                     <textarea id="message" name="message" class="contact-form-textarea" required></textarea>
                 </div>
-                <button type="submit" class="contact-form-submit">Submit</button>
+                <button type="submit" class="contact-form-submit">{{ __('web.submit') }}</button>
             </form>
         </div>
     </section>
@@ -1342,7 +1339,7 @@
             </div>
             <div class="cta-button-wrapper">
                 <a href="{{ route('contact') }}" class="cta-button">
-                    Get A Quote
+                    {{ __('web.get_quote') }}
                     <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
                     </svg>
@@ -1470,11 +1467,11 @@
                     @endif
                 </div>
                 <nav class="footer-nav">
-                    <a href="{{ route('home') }}" class="footer-nav-link">Home</a>
-                    <a href="{{ route('about') }}" class="footer-nav-link">About Us</a>
-                    <a href="#" class="footer-nav-link">Our Products</a>
-                    <a href="#" class="footer-nav-link">News</a>
-                    <a href="{{ route('contact') }}" class="footer-nav-link">Contact Us</a>
+                    <a href="{{ route('home') }}" class="footer-nav-link">{{ __('web.home') }}</a>
+                    <a href="{{ route('about') }}" class="footer-nav-link">{{ __('web.about_us') }}</a>
+                    <a href="{{ route('products') }}" class="footer-nav-link">{{ __('web.our_products') }}</a>
+                    <a href="{{ route('careers') }}" class="footer-nav-link">{{ __('web.careers') }}</a>
+                    <a href="{{ route('contact') }}" class="footer-nav-link">{{ __('web.contact_us') }}</a>
                 </nav>
             </div>
             <div class="footer-social">

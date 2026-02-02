@@ -1,0 +1,182 @@
+<?php
+
+return [
+    // Header
+    'welcome' => 'مرحباً بكم في لوتيس ستور',
+    'follow_us' => 'تابعنا على',
+    'language' => 'العربية',
+    'english' => 'الإنجليزية',
+
+    // Navigation
+    'home' => 'الرئيسية',
+    'about_us' => 'من نحن',
+    'our_products' => 'منتجاتنا',
+    'careers' => 'الوظائف',
+    'contact_us' => 'اتصل بنا',
+    'get_quote' => 'احصل على عرض سعر',
+    'shopping_cart' => 'سلة التسوق',
+
+    // Slider
+    'view_more' => 'عرض المزيد',
+    'welcome_to_loutes' => 'مرحباً بكم في لوتيس ستور',
+    'add_slider_images' => 'أضف صور السليدر من لوحة التحكم',
+    'view_products' => 'عرض المنتجات',
+
+    // Categories
+    'categories' => 'الفئات',
+    'our_categories' => 'فئاتنا',
+
+    // About Section
+    'about_title' => 'من نحن - لوتيس ستور',
+    'about_heading' => 'أفضل جودة - أفضل سعر',
+    'about_content' => 'لوتيس ستور هي متجركم الأول لجميع المنتجات عالية الجودة. نفخر بتقديم أفضل المنتجات بأفضل الأسعار مع خدمة عملاء متميزة.',
+    'about_us' => 'من نحن',
+    'established_1993' => 'تأسست في عام 1993',
+    'lotus_food_industries' => 'لوتيس للصناعات الغذائية',
+
+    // Products Section
+    'products_title' => 'منتجاتنا - لوتيس ستور',
+    'products_heading' => 'منتجاتنا المميزة',
+    'products_description' => 'نقدم لكم تشكيلة واسعة من المنتجات عالية الجودة التي تناسب جميع احتياجاتكم.',
+    'view_all_products' => 'عرض جميع المنتجات',
+    'our_products' => 'منتجاتنا',
+    'discover_products' => 'اكتشف جميع مجموعات منتجاتنا، المصنوعة من مكونات عالية الجودة لتقديم لحظات سعيدة للجميع.',
+
+    // Export Section
+    'export_title' => 'التصدير - لوتيس ستور',
+    'export_heading' => 'نصدر إلى seluruh العالم',
+    'export_description' => 'نحن نفخر بتصدير منتجاتنا إلى مختلف أنحاء العالم. جودة عالية وخدمة متميزة هي شعارنا.',
+
+    // Video Section
+    'video_title' => 'فيديو - لوتيس ستور',
+    'video_description' => 'شاهد فيديو عن منتجاتنا وخدماتنا.',
+
+    // CTA Section
+    'cta_title' => 'اتصل بنا - لوتيس ستور',
+    'cta_heading' => 'جاهزون لمساعدتك',
+    'cta_description' => 'فريقنا جاهز دائماً للإجابة على استفساراتك وتقديم أفضل خدمة لك.',
+    'contact_now' => 'تواصل الآن',
+
+    // Careers
+    'careers_title' => 'الوظائف - لوتيس ستور',
+    'careers_heading' => 'انضم إلى فريقنا',
+    'careers_description' => 'نحن نبحث دائماً عن مواهب مميزة للانضمام إلى فريقنا.',
+    'careers_subtitle' => 'كن جزءاً من عائلة لوتيس ستور وساعدنا في خلق لحظات سعيدة لعملائنا.',
+    'careers_job_title' => 'المسمى الوظيفي',
+    'careers_position_placeholder' => 'المنصب المتقدم له',
+    'careers_full_name' => 'الاسم الكامل',
+    'careers_email' => 'البريد الإلكتروني',
+    'careers_phone' => 'رقم الهاتف',
+    'careers_upload_cv' => 'رفع السيرة الذاتية',
+    'careers_submit_application' => 'تقديم الطلب',
+    'careers_lotus_family' => 'كن جزءاً من عائلة لوتيس',
+    'careers_why_work' => 'لماذا تعمل معنا؟',
+    'careers_send_cv' => 'أرسل لنا سيرتك الذاتية',
+    'careers_name' => 'الاسم',
+    'careers_address' => 'العنوان',
+    'careers_city' => 'المدينة',
+    'careers_country' => 'الدولة',
+    'careers_upload_cv_label' => 'رفع السيرة الذاتية',
+    'careers_file_size' => 'الحد الأقصى لحجم الملف: 5 ميجابايت.',
+    'careers_full_name_placeholder' => 'الاسم الكامل',
+    'careers_street_address' => 'عنوان الشارع',
+    'careers_country_placeholder' => 'الدولة',
+    'careers_phone_placeholder' => 'رقم الهاتف',
+    'careers_email_placeholder' => 'email@example.com',
+    'careers_hear_about' => 'كيف سمعت عنا؟',
+    'careers_hear_select' => 'اختر',
+    'careers_hear_website' => 'الموقع الإلكتروني',
+    'careers_hear_social' => 'وسائل التواصل الاجتماعي',
+    'careers_hear_friend' => 'صديق / زميل عمل',
+    'careers_hear_portal' => 'بوابة الوظائف',
+    'careers_hear_other' => 'أخرى',
+    'careers_comments' => 'التعليقات والأسئلة:',
+    'careers_comments_placeholder' => 'اكتب أي معلومات إضافية أو أسئلة هنا',
+    'careers_send' => 'إرسال',
+    'about_story' => 'قصتنا',
+    'video_journey_description' => 'اختبر الرحلة التي اوصلتنا إلى هنا والقيم التي تدفعنا للأمام كل يوم.',
+    'filter_products' => 'تصفية المنتجات',
+    'footer_news' => 'الأخبار',
+    'checkout_order_summary' => 'ملخص الطلب',
+    'contact_send_email' => 'أرسل بريداً إلكترونياً',
+    'contact_send_message' => 'أرسل لنا رسالة',
+
+    // Contact
+    'contact_title' => 'اتصل بنا - لوتيس ستور',
+    'contact_heading' => 'تواصل معنا',
+    'contact_name' => 'الاسم',
+    'contact_email' => 'البريد الإلكتروني',
+    'contact_phone' => 'رقم الهاتف',
+    'contact_message' => 'الرسالة',
+    'contact_send' => 'إرسال',
+    'contact_success' => 'تم إرسال رسالتك بنجاح',
+
+    // Cart
+    'cart_title' => 'سلة التسوق - لوتيس ستور',
+    'cart_empty' => 'سلة التسوق فارغة',
+    'cart_continue_shopping' => 'متابعة التسوق',
+    'cart_subtotal' => 'المجموع الفرعي',
+    'cart_shipping' => 'الشحن',
+    'cart_total' => 'المجموع',
+    'cart_checkout' => 'إتمام الشراء',
+    'cart_remove' => 'إزالة',
+    'cart_update' => 'تحديث',
+    'cart_quantity' => 'الكمية',
+    'cart_clear' => 'إفراغ السلة',
+    'checkout_notes_optional' => 'ملاحظات الطلب (اختياري)',
+    'checkout_free' => 'مجاني',
+    'products_showing' => 'عرض :first - :last من :total منتج',
+    'products_added_to_cart' => 'تمت إضافته إلى السلة!',
+    'products_price_error' => 'يجب أن يكون السعر الأقصى أكبر من أو يساوي السعر الأدنى.',
+
+    // Checkout
+    'checkout_title' => 'إتمام الشراء - لوتيس ستور',
+    'checkout_billing' => 'معلومات الفواتير',
+    'checkout_shipping' => 'معلومات الشحن',
+    'checkout_payment' => 'معلومات الدفع',
+    'checkout_place_order' => 'إتمام الطلب',
+    'checkout_name' => 'الاسم الكامل',
+    'checkout_email' => 'البريد الإلكتروني',
+    'checkout_address' => 'العنوان',
+    'checkout_city' => 'المدينة',
+    'checkout_phone' => 'رقم الهاتف',
+    'checkout_notes' => 'ملاحظات',
+
+    // Product
+    'product_description' => 'الوصف',
+    'product_details' => 'تفاصيل المنتج',
+    'product_add_to_cart' => 'إضافة إلى السلة',
+    'product_category' => 'الفئة',
+    'product_price' => 'السعر',
+    'product_quantity' => 'الكمية',
+    'related_products' => 'منتجات ذات صلة',
+    'product_reviews' => 'التقييمات',
+
+    // Footer
+    'footer_home' => 'الرئيسية',
+    'footer_about' => 'من نحن',
+    'footer_products' => 'المنتجات',
+    'footer_contact' => 'اتصل بنا',
+    'footer_rights' => 'جميع الحقوق محفوظة',
+
+    // General
+    'search' => 'بحث',
+    'submit' => 'إرسال',
+    'cancel' => 'إلغاء',
+    'save' => 'حفظ',
+    'edit' => 'تعديل',
+    'delete' => 'حذف',
+    'view' => 'عرض',
+    'more' => 'المزيد',
+    'back' => 'رجوع',
+    'next' => 'التالي',
+    'previous' => 'السابق',
+    'close' => 'إغلاق',
+    'loading' => 'جاري التحميل...',
+    'no_products' => 'لا توجد منتجات',
+    'no_results' => 'لا توجد نتائج',
+    'free_shipping' => 'شحن مجاني',
+    'new' => 'جديد',
+    'sale' => 'خصم',
+    'out_of_stock' => 'غير متوفر',
+];

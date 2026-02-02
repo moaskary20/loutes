@@ -1,0 +1,182 @@
+<?php
+
+return [
+    // Header
+    'welcome' => 'Welcome To Loutes Store',
+    'follow_us' => 'Follow us on',
+    'language' => 'English',
+    'english' => 'English',
+
+    // Navigation
+    'home' => 'Home',
+    'about_us' => 'About Us',
+    'our_products' => 'Our Products',
+    'careers' => 'Careers',
+    'contact_us' => 'Contact Us',
+    'get_quote' => 'Get A Quote',
+    'shopping_cart' => 'Shopping Cart',
+
+    // Slider
+    'view_more' => 'View More',
+    'welcome_to_loutes' => 'Welcome To Loutes Store',
+    'add_slider_images' => 'Add slider images from the control panel',
+    'view_products' => 'View Products',
+
+    // Categories
+    'categories' => 'Categories',
+    'our_categories' => 'Our Categories',
+
+    // About Section
+    'about_title' => 'About Us - Loutes Store',
+    'about_heading' => 'Best Quality - Best Price',
+    'about_content' => 'Loutes Store is your first stop for all high-quality products. We pride ourselves on offering the best products at the best prices with excellent customer service.',
+    'about_us' => 'About Us',
+    'established_1993' => 'Established in 1993',
+    'lotus_food_industries' => 'Lotus For Food Industries',
+
+    // Products Section
+    'products_title' => 'Our Products - Loutes Store',
+    'products_heading' => 'Our Featured Products',
+    'products_description' => 'We offer a wide range of high-quality products that meet all your needs.',
+    'view_all_products' => 'View All Products',
+    'our_products' => 'Our Products',
+    'discover_products' => 'Discover all our product ranges and categories, crafted with premium ingredients to deliver joyful moments for everyone.',
+
+    // Export Section
+    'export_title' => 'Export - Loutes Store',
+    'export_heading' => 'We Export To The World',
+    'export_description' => 'We are proud to export our products worldwide. High quality and excellent service is our motto.',
+
+    // Video Section
+    'video_title' => 'Video - Loutes Store',
+    'video_description' => 'Watch a video about our products and services.',
+
+    // CTA Section
+    'cta_title' => 'Contact Us - Loutes Store',
+    'cta_heading' => 'Ready To Help You',
+    'cta_description' => 'Our team is always ready to answer your questions and provide you with the best service.',
+    'contact_now' => 'Contact Now',
+
+    // Careers
+    'careers_title' => 'Careers - Loutes Store',
+    'careers_heading' => 'Join Our Team',
+    'careers_description' => 'We are always looking for talented individuals to join our team.',
+    'careers_subtitle' => 'Be part of Lotus Snacks family and help us create joyful moments for our customers.',
+    'careers_job_title' => 'Job Title',
+    'careers_position_placeholder' => 'Position you are applying for',
+    'careers_full_name' => 'Full Name',
+    'careers_email' => 'Email',
+    'careers_phone' => 'Phone',
+    'careers_upload_cv' => 'Upload CV',
+    'careers_submit_application' => 'Submit Application',
+    'careers_lotus_family' => 'Be part of the Lotus family',
+    'careers_why_work' => 'Why Work With Lotus?',
+    'careers_send_cv' => 'Send Us Your CV',
+    'careers_name' => 'Name',
+    'careers_address' => 'Address',
+    'careers_city' => 'City',
+    'careers_country' => 'Country',
+    'careers_upload_cv_label' => 'Upload Your CV',
+    'careers_file_size' => 'Max. file size: 5 MB.',
+    'careers_full_name_placeholder' => 'Your full name',
+    'careers_street_address' => 'Street address',
+    'careers_country_placeholder' => 'Country',
+    'careers_phone_placeholder' => 'Phone number',
+    'careers_email_placeholder' => 'email@example.com',
+    'careers_hear_about' => 'How did you hear about us?',
+    'careers_hear_select' => 'Select',
+    'careers_hear_website' => 'Website',
+    'careers_hear_social' => 'Social Media',
+    'careers_hear_friend' => 'Friend / Colleague',
+    'careers_hear_portal' => 'Job Portal',
+    'careers_hear_other' => 'Other',
+    'careers_comments' => 'Comments and Questions:',
+    'careers_comments_placeholder' => 'Write any additional information or questions here',
+    'careers_send' => 'Send',
+    'about_story' => 'Our Story',
+    'video_journey_description' => 'Experience the journey that brought us here and the values that drive us forward every day.',
+    'filter_products' => 'Filter Products',
+    'footer_news' => 'News',
+    'checkout_order_summary' => 'Order Summary',
+    'contact_send_email' => 'Send an Email',
+    'contact_send_message' => 'Send us a message',
+
+    // Contact
+    'contact_title' => 'Contact Us - Loutes Store',
+    'contact_heading' => 'Get In Touch',
+    'contact_name' => 'Name',
+    'contact_email' => 'Email',
+    'contact_phone' => 'Phone',
+    'contact_message' => 'Message',
+    'contact_send' => 'Send',
+    'contact_success' => 'Your message has been sent successfully',
+
+    // Cart
+    'cart_title' => 'Shopping Cart - Loutes Store',
+    'cart_empty' => 'Your cart is empty',
+    'cart_continue_shopping' => 'Continue Shopping',
+    'cart_subtotal' => 'Subtotal',
+    'cart_shipping' => 'Shipping',
+    'cart_total' => 'Total',
+    'cart_checkout' => 'Checkout',
+    'cart_remove' => 'Remove',
+    'cart_update' => 'Update',
+    'cart_quantity' => 'Quantity',
+    'cart_clear' => 'Clear Cart',
+    'checkout_notes_optional' => 'Order Notes (Optional)',
+    'checkout_free' => 'FREE',
+    'products_showing' => 'Showing :first - :last of :total products',
+    'products_added_to_cart' => 'added to cart!',
+    'products_price_error' => 'Maximum price must be greater than or equal to minimum price.',
+
+    // Checkout
+    'checkout_title' => 'Checkout - Loutes Store',
+    'checkout_billing' => 'Billing Information',
+    'checkout_shipping' => 'Shipping Information',
+    'checkout_payment' => 'Payment Information',
+    'checkout_place_order' => 'Place Order',
+    'checkout_name' => 'Full Name',
+    'checkout_email' => 'Email',
+    'checkout_address' => 'Address',
+    'checkout_city' => 'City',
+    'checkout_phone' => 'Phone',
+    'checkout_notes' => 'Notes',
+
+    // Product
+    'product_description' => 'Description',
+    'product_details' => 'Product Details',
+    'product_add_to_cart' => 'Add to Cart',
+    'product_category' => 'Category',
+    'product_price' => 'Price',
+    'product_quantity' => 'Quantity',
+    'related_products' => 'Related Products',
+    'product_reviews' => 'Reviews',
+
+    // Footer
+    'footer_home' => 'Home',
+    'footer_about' => 'About',
+    'footer_products' => 'Products',
+    'footer_contact' => 'Contact',
+    'footer_rights' => 'All rights reserved',
+
+    // General
+    'search' => 'Search',
+    'submit' => 'Submit',
+    'cancel' => 'Cancel',
+    'save' => 'Save',
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'view' => 'View',
+    'more' => 'More',
+    'back' => 'Back',
+    'next' => 'Next',
+    'previous' => 'Previous',
+    'close' => 'Close',
+    'loading' => 'Loading...',
+    'no_products' => 'No products found',
+    'no_results' => 'No results found',
+    'free_shipping' => 'Free Shipping',
+    'new' => 'New',
+    'sale' => 'Sale',
+    'out_of_stock' => 'Out of Stock',
+];

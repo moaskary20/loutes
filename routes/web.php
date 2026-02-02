@@ -1,7 +1,11 @@
 <?php
 
 use App\Http\Controllers\OrderPrintController;
+use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Route;
+
+// Language Switch Routes
+Route::get('/language/{locale}', [LanguageController::class, 'switch'])->name('language.switch');
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

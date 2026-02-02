@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loutes Store - الصفحة الرئيسية</title>
+    <title>@yield('title', __('web.welcome')) - Loutes Store</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
 
         body {
             font-family: 'Tajawal', sans-serif;
-            direction: ltr;
+            direction: {{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }};
             overflow-x: hidden;
             margin: 0;
             padding: 0;
@@ -1954,10 +1954,7 @@
             <div class="top-bar-content">
                 <div class="top-bar-left">
                     <div class="language-selector">
-                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.423c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H11.5v3.923zm1.468-1.855c.24.29.461.603.654.94a7.024 7.024 0 0 0 1.756-1.085h-1.83c-.135.431-.362.862-.58 1.145z"/>
-                        </svg>
-                        <span>English</span>
+                        @include('partials.language-dropdown')
                     </div>
                 </div>
                 <div class="top-bar-center">
@@ -1994,14 +1991,14 @@
                     </div>
                 </div>
                 <div class="nav-center">
-                    <a href="{{ route('home') }}" class="nav-link">Home</a>
-                    <a href="{{ route('about') }}" class="nav-link">About Us</a>
-                    <a href="{{ route('products') }}" class="nav-link">Our Products</a>
-                    <a href="{{ route('careers') }}" class="nav-link">Careers</a>
-                    <a href="{{ route('contact') }}" class="nav-link">Contact Us</a>
+                    <a href="{{ route('home') }}" class="nav-link">{{ __('web.home') }}</a>
+                    <a href="{{ route('about') }}" class="nav-link">{{ __('web.about_us') }}</a>
+                    <a href="{{ route('products') }}" class="nav-link">{{ __('web.our_products') }}</a>
+                    <a href="{{ route('careers') }}" class="nav-link">{{ __('web.careers') }}</a>
+                    <a href="{{ route('contact') }}" class="nav-link">{{ __('web.contact_us') }}</a>
                 </div>
                 <div class="nav-right">
-                    <button class="get-quote-btn">Get A Quote</button>
+                    <button class="get-quote-btn">{{ __('web.get_quote') }}</button>
                     <a href="{{ route('cart.index') }}" class="cart-icon-wrapper" title="Shopping Cart">
                         <div class="cart-icon">
                             <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2028,13 +2025,13 @@
                 </button>
             </div>
             <div class="mobile-menu-links">
-                <a href="{{ route('home') }}" class="mobile-menu-link">Home</a>
-                <a href="{{ route('about') }}" class="mobile-menu-link">About Us</a>
-                <a href="{{ route('products') }}" class="mobile-menu-link">Our Products</a>
-                <a href="{{ route('careers') }}" class="mobile-menu-link">Careers</a>
-                <a href="{{ route('contact') }}" class="mobile-menu-link">Contact Us</a>
+                <a href="{{ route('home') }}" class="mobile-menu-link">{{ __('web.home') }}</a>
+                <a href="{{ route('about') }}" class="mobile-menu-link">{{ __('web.about_us') }}</a>
+                <a href="{{ route('products') }}" class="mobile-menu-link">{{ __('web.our_products') }}</a>
+                <a href="{{ route('careers') }}" class="mobile-menu-link">{{ __('web.careers') }}</a>
+                <a href="{{ route('contact') }}" class="mobile-menu-link">{{ __('web.contact_us') }}</a>
                 <a href="{{ route('cart.index') }}" class="mobile-menu-link">
-                    Shopping Cart
+                    {{ __('web.shopping_cart') }}
                     @if(\App\Helpers\CartHelper::getCartCount() > 0)
                         <span style="background: #dc3545; color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.85rem; margin-left: 10px;">
                             {{ \App\Helpers\CartHelper::getCartCount() }}
@@ -2062,7 +2059,7 @@
                                 <p>{{ $slider->description }}</p>
                             @endif
                             @if($slider->link)
-                                <a href="{{ $slider->link }}">عرض المزيد</a>
+                                <a href="{{ $slider->link }}">{{ __('web.view_more') }}</a>
                             @endif
                         </div>
                     @endif
@@ -2070,8 +2067,8 @@
             @empty
                 <div class="slide active">
                     <div class="slide-content">
-                        <h2>مرحباً بك في Loutes Store</h2>
-                        <p>أضف صور السليدر من لوحة التحكم</p>
+                        <h2>{{ __('web.welcome_to_loutes') }}</h2>
+                        <p>{{ __('web.add_slider_images') }}</p>
                     </div>
                 </div>
             @endforelse
@@ -2079,7 +2076,7 @@
 
         @if($siteSettings->view_products_link)
             <a href="{{ $siteSettings->view_products_link }}" class="view-products-button">
-                View Products
+                {{ __('web.view_products') }}
             </a>
         @endif
 
@@ -2689,11 +2686,11 @@ Our Objectives
                     @endif
                 </div>
                 <nav class="footer-nav">
-                    <a href="{{ route('home') }}" class="footer-nav-link">Home</a>
-                    <a href="{{ route('about') }}" class="footer-nav-link">About Us</a>
-                    <a href="#" class="footer-nav-link">Our Products</a>
-                    <a href="#" class="footer-nav-link">News</a>
-                    <a href="{{ route('contact') }}" class="footer-nav-link">Contact Us</a>
+                    <a href="{{ route('home') }}" class="footer-nav-link">{{ __('web.home') }}</a>
+                    <a href="{{ route('about') }}" class="footer-nav-link">{{ __('web.about_us') }}</a>
+                    <a href="{{ route('products') }}" class="footer-nav-link">{{ __('web.our_products') }}</a>
+                    <a href="#" class="footer-nav-link">{{ __('web.footer_news') }}</a>
+                    <a href="{{ route('contact') }}" class="footer-nav-link">{{ __('web.contact_us') }}</a>
                 </nav>
             </div>
             <div class="footer-social">
