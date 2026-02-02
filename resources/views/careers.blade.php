@@ -57,12 +57,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            overflow: visible;
         }
 
         .top-bar-left {
             display: flex;
             align-items: center;
             gap: 15px;
+            overflow: visible;
         }
 
         .top-bar-center {
@@ -78,6 +80,7 @@
             align-items: center;
             gap: 5px;
             cursor: pointer;
+            overflow: visible;
         }
 
         .welcome-text {

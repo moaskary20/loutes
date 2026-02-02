@@ -3,6 +3,7 @@
         position: relative;
         display: inline-block;
         z-index: 1001;
+        overflow: visible !important;
     }
 
     .language-dropdown-btn {
@@ -21,6 +22,7 @@
         border: 1px solid rgba(255, 255, 255, 0.2);
         min-width: 100px;
         justify-content: space-between;
+        overflow: visible !important;
     }
 
     .language-dropdown-btn:hover,
@@ -50,16 +52,16 @@
 
     .language-dropdown-content {
         display: none;
-        position: absolute;
-        {{ app()->getLocale() == 'ar' ? 'left' : 'right' }}: 0;
+        position: fixed;
         min-width: 160px;
         background: white;
         border-radius: 8px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         overflow: hidden;
-        margin-top: 6px;
         border: 1px solid #e5e7eb;
-        z-index: 2000;
+        z-index: 10001;
+        transform: translateZ(0);
+        will-change: transform;
     }
 
     .language-dropdown-content.show {
@@ -231,6 +233,29 @@
     let isOpen = false;
     let currentFocusIndex = -1;
 
+    // Move dropdown to body so position:fixed works (header has transform which breaks fixed positioning)
+    function ensureDropdownInBody() {
+        if (dropdown.parentNode !== document.body) {
+            document.body.appendChild(dropdown);
+        }
+    }
+
+    // Position dropdown directly below the button (close to button)
+    function positionDropdown() {
+        ensureDropdownInBody();
+        const rect = dropdownBtn.getBoundingClientRect();
+        const isRtl = document.documentElement.dir === 'rtl' || document.documentElement.getAttribute('lang') === 'ar';
+        const gap = 6;
+        dropdown.style.top = (rect.bottom + gap) + 'px';
+        if (isRtl) {
+            dropdown.style.right = (window.innerWidth - rect.right) + 'px';
+            dropdown.style.left = 'auto';
+        } else {
+            dropdown.style.left = rect.left + 'px';
+            dropdown.style.right = 'auto';
+        }
+    }
+
     // Toggle dropdown visibility
     function toggleDropdown() {
         isOpen = !isOpen;
@@ -238,6 +263,7 @@
         dropdownBtn.setAttribute('aria-expanded', isOpen.toString());
 
         if (isOpen) {
+            positionDropdown();
             // Focus the first item or the active item
             const activeItem = dropdown.querySelector('.language-dropdown-item.active');
             currentFocusIndex = activeItem ? Array.from(languageItems).indexOf(activeItem) : 0;
@@ -383,10 +409,11 @@
         });
     });
 
-    // Close dropdown when clicking outside
+    // Close dropdown when clicking outside (dropdown may be in body, so check both)
     document.addEventListener('click', function(event) {
-        const dropdownContainer = document.querySelector('.language-dropdown');
-        if (dropdownContainer && !dropdownContainer.contains(event.target) && isOpen) {
+        const container = document.querySelector('.language-dropdown');
+        const isInside = (container && container.contains(event.target)) || dropdown.contains(event.target);
+        if (!isInside && isOpen) {
             closeDropdown();
         }
     });
@@ -397,6 +424,13 @@
             closeDropdown();
         }
     });
+
+    // Reposition dropdown on scroll (keeps it aligned with button)
+    window.addEventListener('scroll', function() {
+        if (isOpen) {
+            positionDropdown();
+        }
+    }, true);
 
     // Initialize - no automatic language switching, server handles locale from cookie
 })();

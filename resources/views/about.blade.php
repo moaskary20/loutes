@@ -58,12 +58,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            overflow: visible;
         }
 
         .top-bar-left {
             display: flex;
             align-items: center;
             gap: 20px;
+            overflow: visible;
         }
 
         .language-selector {
@@ -72,6 +74,7 @@
             gap: 8px;
             font-size: 14px;
             cursor: pointer;
+            overflow: visible;
         }
         
         .language-link {

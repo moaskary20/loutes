@@ -50,7 +50,6 @@
             color: white;
             padding: 8px 15px;
             font-size: 14px;
-            border-radius: 8px 8px 0 0;
             overflow: visible;
         }
 
@@ -60,12 +59,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            overflow: visible;
         }
 
         .top-bar-left {
             display: flex;
             align-items: center;
             gap: 15px;
+            overflow: visible;
         }
 
         .top-bar-center {
@@ -87,6 +88,7 @@
             align-items: center;
             gap: 5px;
             cursor: pointer;
+            overflow: visible;
         }
 
         .welcome-text {
