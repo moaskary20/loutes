@@ -17,6 +17,9 @@ class LanguageController extends Controller
      */
     public function switch($locale)
     {
+        // Log for debugging
+        \Log::info('Language switch requested: ' . $locale);
+        
         // Validate the locale
         if (!in_array($locale, ['en', 'ar'])) {
             $locale = 'en'; // Default to English
@@ -28,8 +31,16 @@ class LanguageController extends Controller
         // Set the application locale
         App::setLocale($locale);
 
-        // Create a cookie that lasts for 1 year
-        $cookie = Cookie::make('locale', $locale, 525600); // 525600 minutes = 1 year
+        // Create a cookie that lasts for 1 year (525600 minutes)
+        $cookie = Cookie::make(
+            'locale',           // name
+            $locale,            // value
+            525600,             // minutes (1 year)
+            '/',                // path
+            null,               // domain
+            false,              // secure (http/https)
+            true                // httpOnly (false to allow JS access)
+        );
 
         // Get the previous URL to redirect back
         $previousUrl = url()->previous();

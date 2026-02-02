@@ -43,7 +43,8 @@ class AppServiceProvider extends ServiceProvider
         $locale = Session::get('locale');
 
         if (!$locale) {
-            $locale = Cookie::get('locale');
+            // Try to get from request cookie
+            $locale = request()->cookie('locale');
         }
 
         // Validate and set locale

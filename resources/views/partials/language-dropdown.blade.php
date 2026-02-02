@@ -55,7 +55,6 @@
         background: white;
         border-radius: 8px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-        z-index: 1000;
         overflow: hidden;
         margin-top: 6px;
         border: 1px solid #e5e7eb;
@@ -280,17 +279,10 @@
     // Switch language
     function switchLanguage(locale, redirect = true) {
         console.log('switchLanguage called with:', locale);
-        // Save to localStorage
-        localStorage.setItem('userLocale', locale);
-
-        // Also set a cookie for server-side persistence
-        const expires = new Date();
-        expires.setFullYear(expires.getFullYear() + 1);
-        document.cookie = `locale=${locale};expires=${expires.toUTCString()};path=/;SameSite=Lax`;
 
         if (redirect) {
             console.log('Redirecting to:', `/language/${locale}`);
-            // Navigate to language switch route
+            // Navigate to language switch route - let the server handle cookie and session
             window.location.href = `/language/${locale}`;
         }
     }
