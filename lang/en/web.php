@@ -102,7 +102,7 @@ return [
     'contact_send_message' => 'Send us a message',
 
     // Home Page - Products Section
-    'products_count' => '200+ Many distinctive products with the best quality and great taste',
+    'products_count' => '  Many distinctive products with the best quality and great taste',
     'products_joy' => 'Crafting Joy, One Moment at a Time',
     'products_joy_description' => 'Experience a world where quality, craftsmanship, and creativity come together. We are committed to delivering products made with passion, refined through innovation, and trusted for their consistency. Discover excellence in every detail.',
     'view_products' => 'View Products',

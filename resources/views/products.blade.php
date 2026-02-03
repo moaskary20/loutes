@@ -668,13 +668,6 @@
             margin-bottom: 8px;
         }
 
-        .product-card-price {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: #cead42;
-            margin-bottom: 8px;
-        }
-
         .product-card-rating {
             font-size: 0.8rem;
             color: #f39c12;
@@ -901,15 +894,6 @@
         <aside class="products-filters">
             <h3 class="filter-title">{{ __('web.filter_products') }}</h3>
             <form method="GET">
-                <!-- Price Filter -->
-                <div class="filter-group">
-                    <h4>Price</h4>
-                    <div class="filter-row">
-                        <input type="number" step="0.01" min="0" name="min_price" id="min_price" class="filter-input" placeholder="Min" value="{{ request('min_price') }}">
-                        <input type="number" step="0.01" min="0" name="max_price" id="max_price" class="filter-input" placeholder="Max" value="{{ request('max_price') }}">
-                    </div>
-                </div>
-
                 <!-- Categories Filter -->
                 <div class="filter-group">
                     <h4>Categories</h4>
@@ -978,7 +962,6 @@
                             @if($product->category)
                                 <div class="product-card-category">{{ $product->category->name_en ?? $product->category->name }}</div>
                             @endif
-                            <div class="product-card-price">{{ number_format($product->price, 2) }} EGP</div>
                             @php
                                 $avgRating = $product->reviews_avg_rating ?? $product->reviews->avg('rating');
                             @endphp
@@ -1177,34 +1160,6 @@
                 toast.style.animation = 'slideOut 0.3s ease';
                 setTimeout(() => toast.remove(), 300);
             }, 3000);
-        }
-
-        // Price filter validation
-        const minPriceInput = document.getElementById('min_price');
-        const maxPriceInput = document.getElementById('max_price');
-        
-        if (minPriceInput && maxPriceInput) {
-            // Update max_price min attribute when min_price changes
-            minPriceInput.addEventListener('input', function() {
-                const minValue = parseFloat(this.value) || 0;
-                maxPriceInput.setAttribute('min', minValue);
-            });
-            
-            // Validate max_price on form submit
-            const filterForm = minPriceInput.closest('form');
-            if (filterForm) {
-                filterForm.addEventListener('submit', function(e) {
-                    const minValue = parseFloat(minPriceInput.value);
-                    const maxValue = parseFloat(maxPriceInput.value);
-                    
-                    if (minValue && maxValue && maxValue < minValue) {
-                        e.preventDefault();
-                        showToast('{{ __('web.products_price_error') }}', 'error');
-                        maxPriceInput.focus();
-                        return false;
-                    }
-                });
-            }
         }
 
         // Add CSS animations
